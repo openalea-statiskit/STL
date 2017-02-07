@@ -1,0 +1,26 @@
+package:
+    name: python-statiskit_stl
+    version: 3.3.1
+source:
+    path: ../..
+build:
+    features: ''
+    number: '0'
+requirements:
+    build:
+        - libdev
+        - python-dev
+        - libboost
+        - libstatiskit_stl
+        - python
+    run:
+        - librun
+        - libstatiskit_stl
+        - libboost
+        - python
+test:
+    commands:
+        - python -c "import statiskit.stl.__stl"
+about:
+    home: statiskit.readthedocs.org
+    license: CeCILL
