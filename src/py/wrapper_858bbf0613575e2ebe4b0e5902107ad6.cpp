@@ -23,6 +23,11 @@ void wrapper_858bbf0613575e2ebe4b0e5902107ad6()
     ::std::set< double, struct ::std::less< double >, class ::std::allocator< double > >::size_type  (::std::set< double, ::std::less< double >, ::std::allocator< double > >::*method_pointer_3b8d68ccc39d5592a2ce2b25aeec2516)(::std::set< double, struct ::std::less< double >, class ::std::allocator< double > >::key_type const &) = &::std::set< double, struct ::std::less< double >, class ::std::allocator< double > >::erase;
     void  (::std::set< double, ::std::less< double >, ::std::allocator< double > >::*method_pointer_52dab5b0978456aa9d00eb760b635f03)() = &::std::set< double, struct ::std::less< double >, class ::std::allocator< double > >::clear;
     ::std::set< double, struct ::std::less< double >, class ::std::allocator< double > >::size_type  (::std::set< double, ::std::less< double >, ::std::allocator< double > >::*method_pointer_4d624c7e98c054ad937392978d9dbd31)(::std::set< double, struct ::std::less< double >, class ::std::allocator< double > >::key_type const &) const = &::std::set< double, struct ::std::less< double >, class ::std::allocator< double > >::count;
+    struct function_group
+    {
+        static class ::statiskit::stl::Generator< class ::std::set< double, struct ::std::less< double >, class ::std::allocator< double > > >  function_e2d89d727bb55c85a14e5778e924d099(class ::std::set< double, struct ::std::less< double >, class ::std::allocator< double > > const & parameter_0)
+        { return ::statiskit::stl::generator(parameter_0); }
+    };
     boost::python::class_< class ::std::set< double, struct ::std::less< double >, class ::std::allocator< double > >, autowig::Held< class ::std::set< double, struct ::std::less< double >, class ::std::allocator< double > > >::Type > class_858bbf0613575e2ebe4b0e5902107ad6("_Set_858bbf0613575e2ebe4b0e5902107ad6", "", boost::python::no_init);
     class_858bbf0613575e2ebe4b0e5902107ad6.def(boost::python::init<  >(""));
     class_858bbf0613575e2ebe4b0e5902107ad6.def(boost::python::init< struct ::std::less< double > const &, ::std::set< double, struct ::std::less< double >, class ::std::allocator< double > >::allocator_type const & >(""));
@@ -33,12 +38,13 @@ void wrapper_858bbf0613575e2ebe4b0e5902107ad6()
     class_858bbf0613575e2ebe4b0e5902107ad6.def("value_comp", method_pointer_3be34a51ad7f5cae939bb244d51836e7, "");
     class_858bbf0613575e2ebe4b0e5902107ad6.def("get_allocator", method_pointer_d2ea25a2517e5279b777100505197e28, "");
     class_858bbf0613575e2ebe4b0e5902107ad6.def("empty", method_pointer_ebd24ba22b5a57ba98343f75023d77a0, "");
-    class_858bbf0613575e2ebe4b0e5902107ad6.def("size", method_pointer_8ae51fee6ed45f33acf4a1926506397b, "");
+    class_858bbf0613575e2ebe4b0e5902107ad6.def("__len__", method_pointer_8ae51fee6ed45f33acf4a1926506397b, "");
     class_858bbf0613575e2ebe4b0e5902107ad6.def("max_size", method_pointer_7153735b781d505b9146233becb01637, "");
     class_858bbf0613575e2ebe4b0e5902107ad6.def("swap", method_pointer_3f2f8976fb6b59a99d5059c6176d54f9, "");
     class_858bbf0613575e2ebe4b0e5902107ad6.def("erase", method_pointer_3b8d68ccc39d5592a2ce2b25aeec2516, "");
     class_858bbf0613575e2ebe4b0e5902107ad6.def("clear", method_pointer_52dab5b0978456aa9d00eb760b635f03, "");
     class_858bbf0613575e2ebe4b0e5902107ad6.def("count", method_pointer_4d624c7e98c054ad937392978d9dbd31, "");
+    class_858bbf0613575e2ebe4b0e5902107ad6.def("__iter__", function_group::function_e2d89d727bb55c85a14e5778e924d099, "");
 
     struct set_858bbf0613575e2ebe4b0e5902107ad6_from_python
     {

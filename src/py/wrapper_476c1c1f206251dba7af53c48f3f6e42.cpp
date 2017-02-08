@@ -23,6 +23,11 @@ void wrapper_476c1c1f206251dba7af53c48f3f6e42()
     ::std::set< unsigned long int, struct ::std::less< unsigned long int >, class ::std::allocator< unsigned long int > >::size_type  (::std::set< unsigned long int, ::std::less< unsigned long int >, ::std::allocator< unsigned long int > >::*method_pointer_7b38232cb48b525a86fdbd64579aab23)(::std::set< unsigned long int, struct ::std::less< unsigned long int >, class ::std::allocator< unsigned long int > >::key_type const &) = &::std::set< unsigned long int, struct ::std::less< unsigned long int >, class ::std::allocator< unsigned long int > >::erase;
     void  (::std::set< unsigned long int, ::std::less< unsigned long int >, ::std::allocator< unsigned long int > >::*method_pointer_b17af8c2f62e58eda931b314ca0992ce)() = &::std::set< unsigned long int, struct ::std::less< unsigned long int >, class ::std::allocator< unsigned long int > >::clear;
     ::std::set< unsigned long int, struct ::std::less< unsigned long int >, class ::std::allocator< unsigned long int > >::size_type  (::std::set< unsigned long int, ::std::less< unsigned long int >, ::std::allocator< unsigned long int > >::*method_pointer_a8588ce6ea305ba5ab184a11728e1689)(::std::set< unsigned long int, struct ::std::less< unsigned long int >, class ::std::allocator< unsigned long int > >::key_type const &) const = &::std::set< unsigned long int, struct ::std::less< unsigned long int >, class ::std::allocator< unsigned long int > >::count;
+    struct function_group
+    {
+        static class ::statiskit::stl::Generator< class ::std::set< unsigned long int, struct ::std::less< unsigned long int >, class ::std::allocator< unsigned long int > > >  function_642e9bdbcd3d597b98c523340e8a23c1(class ::std::set< unsigned long int, struct ::std::less< unsigned long int >, class ::std::allocator< unsigned long int > > const & parameter_0)
+        { return ::statiskit::stl::generator(parameter_0); }
+    };
     boost::python::class_< class ::std::set< unsigned long int, struct ::std::less< unsigned long int >, class ::std::allocator< unsigned long int > >, autowig::Held< class ::std::set< unsigned long int, struct ::std::less< unsigned long int >, class ::std::allocator< unsigned long int > > >::Type > class_476c1c1f206251dba7af53c48f3f6e42("_Set_476c1c1f206251dba7af53c48f3f6e42", "", boost::python::no_init);
     class_476c1c1f206251dba7af53c48f3f6e42.def(boost::python::init<  >(""));
     class_476c1c1f206251dba7af53c48f3f6e42.def(boost::python::init< struct ::std::less< unsigned long int > const &, ::std::set< unsigned long int, struct ::std::less< unsigned long int >, class ::std::allocator< unsigned long int > >::allocator_type const & >(""));
@@ -33,12 +38,13 @@ void wrapper_476c1c1f206251dba7af53c48f3f6e42()
     class_476c1c1f206251dba7af53c48f3f6e42.def("value_comp", method_pointer_f6b78bb3072e5794bb74926adc04ef6e, "");
     class_476c1c1f206251dba7af53c48f3f6e42.def("get_allocator", method_pointer_d6db1e53090157a38e4505d1005b85d5, "");
     class_476c1c1f206251dba7af53c48f3f6e42.def("empty", method_pointer_090f703b180d5d00850b247fd88fc641, "");
-    class_476c1c1f206251dba7af53c48f3f6e42.def("size", method_pointer_54317bd9395755a284b9f20c9142dcc8, "");
+    class_476c1c1f206251dba7af53c48f3f6e42.def("__len__", method_pointer_54317bd9395755a284b9f20c9142dcc8, "");
     class_476c1c1f206251dba7af53c48f3f6e42.def("max_size", method_pointer_ae6c59cafc7e5ae39d538e3dd828f03c, "");
     class_476c1c1f206251dba7af53c48f3f6e42.def("swap", method_pointer_961d06b96bc65f909b9fcfebb5be338b, "");
     class_476c1c1f206251dba7af53c48f3f6e42.def("erase", method_pointer_7b38232cb48b525a86fdbd64579aab23, "");
     class_476c1c1f206251dba7af53c48f3f6e42.def("clear", method_pointer_b17af8c2f62e58eda931b314ca0992ce, "");
     class_476c1c1f206251dba7af53c48f3f6e42.def("count", method_pointer_a8588ce6ea305ba5ab184a11728e1689, "");
+    class_476c1c1f206251dba7af53c48f3f6e42.def("__iter__", function_group::function_642e9bdbcd3d597b98c523340e8a23c1, "");
 
     struct set_476c1c1f206251dba7af53c48f3f6e42_from_python
     {

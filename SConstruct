@@ -42,10 +42,47 @@ HEADER = """\
 
 namespace statiskit
 {
-    typedef long unsigned int Index;
+    typedef std::size_t Index;
 
     namespace stl
     {
+
+        template<class T>
+            class Generator
+            {
+                public:
+                    Generator(const T& iterable)
+                    { 
+                        _cur = iterable.cbegin();
+                        _end = iterable.cend();
+                    }
+
+                    virtual ~Generator()
+                    {}
+
+                    Generator(const Generator< T >& generator)
+                    { 
+                        _cur = generator._cur;
+                        _end = generator._end;
+                    }
+
+                    bool is_valid() const
+                    { return _cur != _end; }
+
+                    Generator< T >& operator++()
+                    { 
+                        ++_cur;
+                        return *this;
+                    }
+
+                    typename T::value_type value() const
+                    { return *_cur; }
+
+                protected:
+                    typename T::const_iterator _cur;
+                    typename T::const_iterator _end;
+            };
+
 """
 
 def capitalize(T):
@@ -60,11 +97,17 @@ with open('src/cpp/STL.h', 'w') as filehandler:
     for sort in SETS:
         for T in SETS[sort]:
             filehandler.write('\t\ttypedef std::set< ' + T + ', std::' + sort + '< ' + T + ' > > Set' + sort.capitalize() + capitalize(T) +';\n')
+            filehandler.write('\t\tGenerator< std::set< ' + T + ', std::' + sort + '< ' + T + ' > > > generator(const std::set< ' + T + ', std::' + sort + '< ' + T + ' > >& iterable);\n')
     filehandler.write('\n')
-    filehandler.write('\t}\n}\n\n#endif')
+    filehandler.write('\t}\n}\n\n\n#endif')
 
 with open('src/cpp/STL.cpp', 'w') as filehandler:
-    filehandler.write('#include "STL.h"')
+    filehandler.write('#include "STL.h"\n\nnamespace statiskit\n{\n\tnamespace stl\n\t{\n')
+    for sort in SETS:
+        for T in SETS[sort]:
+            filehandler.write('\t\tGenerator< std::set< ' + T + ', std::' + sort + '< ' + T + ' > > > generator(const std::set< ' + T + ', std::' + sort + '< ' + T + ' > >& iterable)\n')
+            filehandler.write('\t\t{ return Generator< std::set< ' + T + ', std::' + sort + '< ' + T + ' > > >(iterable); }\n\n')
+    filehandler.write('\t}\n}')
 
 VariantDir('build', 'src')
 try:

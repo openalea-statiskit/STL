@@ -13,6 +13,16 @@ asg = autowig.parser(asg, [os.path.join(sys.prefix, 'include', 'statiskit', 'stl
 
 asg = autowig.controller(asg)
 
+def gnerator_refactoring(asg):
+    for function in asg['::statiskit::stl'].functions():
+        if function.localname == 'generator':
+            parameter = function.parameters[0].qualified_type.desugared_type
+            if parameter.is_class:
+                function.parent = parameter.unqualified_type
+    return asg
+
+asg = gnerator_refactoring(asg)
+
 autowig.generator.plugin = 'boost_python'
 nodes = [typedef.qualified_type.unqualified_type for typedef in asg['::statiskit::stl'].typedefs()]
 nodes = list(itertools.chain(*[node.bases(inherited=True) for node in nodes])) + nodes + asg['::statiskit::stl'].declarations()
