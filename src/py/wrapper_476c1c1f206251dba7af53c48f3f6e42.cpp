@@ -27,6 +27,8 @@ void wrapper_476c1c1f206251dba7af53c48f3f6e42()
     {
         static class ::statiskit::stl::Generator< class ::std::set< unsigned long int, struct ::std::less< unsigned long int >, class ::std::allocator< unsigned long int > > >  function_642e9bdbcd3d597b98c523340e8a23c1(class ::std::set< unsigned long int, struct ::std::less< unsigned long int >, class ::std::allocator< unsigned long int > > const & parameter_0)
         { return ::statiskit::stl::generator(parameter_0); }
+        static bool  function_9beed4b3db865b0b9ea9906f3488f3da(class ::std::set< unsigned long int, struct ::std::less< unsigned long int >, class ::std::allocator< unsigned long int > > & parameter_0, ::statiskit::Index const & parameter_1)
+        { return ::statiskit::stl::insert(parameter_0, parameter_1); }
     };
     boost::python::class_< class ::std::set< unsigned long int, struct ::std::less< unsigned long int >, class ::std::allocator< unsigned long int > >, autowig::Held< class ::std::set< unsigned long int, struct ::std::less< unsigned long int >, class ::std::allocator< unsigned long int > > >::Type > class_476c1c1f206251dba7af53c48f3f6e42("_Set_476c1c1f206251dba7af53c48f3f6e42", "", boost::python::no_init);
     class_476c1c1f206251dba7af53c48f3f6e42.def(boost::python::init<  >(""));
@@ -45,6 +47,7 @@ void wrapper_476c1c1f206251dba7af53c48f3f6e42()
     class_476c1c1f206251dba7af53c48f3f6e42.def("clear", method_pointer_b17af8c2f62e58eda931b314ca0992ce, "");
     class_476c1c1f206251dba7af53c48f3f6e42.def("count", method_pointer_a8588ce6ea305ba5ab184a11728e1689, "");
     class_476c1c1f206251dba7af53c48f3f6e42.def("__iter__", function_group::function_642e9bdbcd3d597b98c523340e8a23c1, "");
+    class_476c1c1f206251dba7af53c48f3f6e42.def("insert", function_group::function_9beed4b3db865b0b9ea9906f3488f3da, "");
 
     struct set_476c1c1f206251dba7af53c48f3f6e42_from_python
     {

@@ -27,6 +27,8 @@ void wrapper_858bbf0613575e2ebe4b0e5902107ad6()
     {
         static class ::statiskit::stl::Generator< class ::std::set< double, struct ::std::less< double >, class ::std::allocator< double > > >  function_e2d89d727bb55c85a14e5778e924d099(class ::std::set< double, struct ::std::less< double >, class ::std::allocator< double > > const & parameter_0)
         { return ::statiskit::stl::generator(parameter_0); }
+        static bool  function_992b8adef62d5217a35458a6c04194e7(class ::std::set< double, struct ::std::less< double >, class ::std::allocator< double > > & parameter_0, double const & parameter_1)
+        { return ::statiskit::stl::insert(parameter_0, parameter_1); }
     };
     boost::python::class_< class ::std::set< double, struct ::std::less< double >, class ::std::allocator< double > >, autowig::Held< class ::std::set< double, struct ::std::less< double >, class ::std::allocator< double > > >::Type > class_858bbf0613575e2ebe4b0e5902107ad6("_Set_858bbf0613575e2ebe4b0e5902107ad6", "", boost::python::no_init);
     class_858bbf0613575e2ebe4b0e5902107ad6.def(boost::python::init<  >(""));
@@ -45,6 +47,7 @@ void wrapper_858bbf0613575e2ebe4b0e5902107ad6()
     class_858bbf0613575e2ebe4b0e5902107ad6.def("clear", method_pointer_52dab5b0978456aa9d00eb760b635f03, "");
     class_858bbf0613575e2ebe4b0e5902107ad6.def("count", method_pointer_4d624c7e98c054ad937392978d9dbd31, "");
     class_858bbf0613575e2ebe4b0e5902107ad6.def("__iter__", function_group::function_e2d89d727bb55c85a14e5778e924d099, "");
+    class_858bbf0613575e2ebe4b0e5902107ad6.def("insert", function_group::function_992b8adef62d5217a35458a6c04194e7, "");
 
     struct set_858bbf0613575e2ebe4b0e5902107ad6_from_python
     {

@@ -74,9 +74,11 @@ namespace statiskit
 		typedef std::vector< double > VectorDouble;
 
 		typedef std::set< Index, std::less< Index > > SetLessIndex;
-		Generator< std::set< Index, std::less< Index > > > generator(const std::set< Index, std::less< Index > >& iterable);
+		STATISKIT_STL_API Generator< std::set< Index, std::less< Index > > > generator(const std::set< Index, std::less< Index > >& iterable);
+		STATISKIT_STL_API bool insert(std::set< Index, std::less< Index > >& iterable, const Index& value);
 		typedef std::set< double, std::less< double > > SetLessDouble;
-		Generator< std::set< double, std::less< double > > > generator(const std::set< double, std::less< double > >& iterable);
+		STATISKIT_STL_API Generator< std::set< double, std::less< double > > > generator(const std::set< double, std::less< double > >& iterable);
+		STATISKIT_STL_API bool insert(std::set< double, std::less< double > >& iterable, const double& value);
 
 	}
 }

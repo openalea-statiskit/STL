@@ -97,7 +97,8 @@ with open('src/cpp/STL.h', 'w') as filehandler:
     for sort in SETS:
         for T in SETS[sort]:
             filehandler.write('\t\ttypedef std::set< ' + T + ', std::' + sort + '< ' + T + ' > > Set' + sort.capitalize() + capitalize(T) +';\n')
-            filehandler.write('\t\tGenerator< std::set< ' + T + ', std::' + sort + '< ' + T + ' > > > generator(const std::set< ' + T + ', std::' + sort + '< ' + T + ' > >& iterable);\n')
+            filehandler.write('\t\tSTATISKIT_STL_API Generator< std::set< ' + T + ', std::' + sort + '< ' + T + ' > > > generator(const std::set< ' + T + ', std::' + sort + '< ' + T + ' > >& iterable);\n')
+            filehandler.write('\t\tSTATISKIT_STL_API bool insert(std::set< ' + T + ', std::' + sort + '< ' + T + ' > >& iterable, const ' + T + '& value);\n')
     filehandler.write('\n')
     filehandler.write('\t}\n}\n\n\n#endif')
 
@@ -107,6 +108,8 @@ with open('src/cpp/STL.cpp', 'w') as filehandler:
         for T in SETS[sort]:
             filehandler.write('\t\tGenerator< std::set< ' + T + ', std::' + sort + '< ' + T + ' > > > generator(const std::set< ' + T + ', std::' + sort + '< ' + T + ' > >& iterable)\n')
             filehandler.write('\t\t{ return Generator< std::set< ' + T + ', std::' + sort + '< ' + T + ' > > >(iterable); }\n\n')
+            filehandler.write('\t\tbool insert(std::set< ' + T + ', std::' + sort + '< ' + T + ' > >& iterable, const ' + T + '& value)\n')
+            filehandler.write('\t\t{ return iterable.insert(value).second; }\n\n')
     filehandler.write('\t}\n}')
 
 VariantDir('build', 'src')
@@ -118,6 +121,12 @@ except Exception:
     raise
 try:
   SConscript(os.path.join('build', 'py', 'SConscript'), exports="env")
+except EnvironmentError:
+  pass
+except Exception:
+    raise
+try:
+  SConscript(os.path.join('test', 'SConscript'), exports="env")
 except EnvironmentError:
   pass
 except Exception:

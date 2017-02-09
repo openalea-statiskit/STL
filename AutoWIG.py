@@ -15,7 +15,7 @@ asg = autowig.controller(asg)
 
 def gnerator_refactoring(asg):
     for function in asg['::statiskit::stl'].functions():
-        if function.localname == 'generator':
+        if function.localname in ['generator', 'insert']:
             parameter = function.parameters[0].qualified_type.desugared_type
             if parameter.is_class:
                 function.parent = parameter.unqualified_type
