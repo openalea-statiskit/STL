@@ -37,11 +37,7 @@ void wrapper_107131f9768c56e794a9b0de728d1738()
     void  (::std::vector< double, ::std::allocator< double > >::*method_pointer_a4208670622158c3a2376d15176ceee2)() = &::std::vector< double, class ::std::allocator< double > >::clear;
     boost::python::class_< class ::std::vector< double, class ::std::allocator< double > >, autowig::Held< class ::std::vector< double, class ::std::allocator< double > > >::Type > class_107131f9768c56e794a9b0de728d1738("_Vector_107131f9768c56e794a9b0de728d1738", "", boost::python::no_init);
     class_107131f9768c56e794a9b0de728d1738.def(boost::python::init<  >(""));
-    class_107131f9768c56e794a9b0de728d1738.def(boost::python::init< ::std::vector< double, class ::std::allocator< double > >::allocator_type const & >(""));
-    class_107131f9768c56e794a9b0de728d1738.def(boost::python::init< ::std::vector< double, class ::std::allocator< double > >::size_type , ::std::vector< double, class ::std::allocator< double > >::allocator_type const & >(""));
-    class_107131f9768c56e794a9b0de728d1738.def(boost::python::init< ::std::vector< double, class ::std::allocator< double > >::size_type , ::std::vector< double, class ::std::allocator< double > >::value_type const &, ::std::vector< double, class ::std::allocator< double > >::allocator_type const & >(""));
     class_107131f9768c56e794a9b0de728d1738.def(boost::python::init< class ::std::vector< double, class ::std::allocator< double > > const & >(""));
-    class_107131f9768c56e794a9b0de728d1738.def(boost::python::init< class ::std::vector< double, class ::std::allocator< double > > const &, ::std::vector< double, class ::std::allocator< double > >::allocator_type const & >(""));
     class_107131f9768c56e794a9b0de728d1738.def("assign", method_pointer_3fcbcdd89dc951b39073e310b61a04e9, "");
     class_107131f9768c56e794a9b0de728d1738.def("__len__", method_pointer_2762c9c3801851f798933620de2a38c5, "");
     class_107131f9768c56e794a9b0de728d1738.def("max_size", method_pointer_441a8fd7a6105f52ab269c45a59d8985, "");

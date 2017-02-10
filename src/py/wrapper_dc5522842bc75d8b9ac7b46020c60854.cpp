@@ -37,11 +37,7 @@ void wrapper_dc5522842bc75d8b9ac7b46020c60854()
     void  (::std::vector< unsigned long int, ::std::allocator< unsigned long int > >::*method_pointer_7ddf26a68f7e58bda61527afe20e9b00)() = &::std::vector< unsigned long int, class ::std::allocator< unsigned long int > >::clear;
     boost::python::class_< class ::std::vector< unsigned long int, class ::std::allocator< unsigned long int > >, autowig::Held< class ::std::vector< unsigned long int, class ::std::allocator< unsigned long int > > >::Type > class_dc5522842bc75d8b9ac7b46020c60854("_Vector_dc5522842bc75d8b9ac7b46020c60854", "", boost::python::no_init);
     class_dc5522842bc75d8b9ac7b46020c60854.def(boost::python::init<  >(""));
-    class_dc5522842bc75d8b9ac7b46020c60854.def(boost::python::init< ::std::vector< unsigned long int, class ::std::allocator< unsigned long int > >::allocator_type const & >(""));
-    class_dc5522842bc75d8b9ac7b46020c60854.def(boost::python::init< ::std::vector< unsigned long int, class ::std::allocator< unsigned long int > >::size_type , ::std::vector< unsigned long int, class ::std::allocator< unsigned long int > >::allocator_type const & >(""));
-    class_dc5522842bc75d8b9ac7b46020c60854.def(boost::python::init< ::std::vector< unsigned long int, class ::std::allocator< unsigned long int > >::size_type , ::std::vector< unsigned long int, class ::std::allocator< unsigned long int > >::value_type const &, ::std::vector< unsigned long int, class ::std::allocator< unsigned long int > >::allocator_type const & >(""));
     class_dc5522842bc75d8b9ac7b46020c60854.def(boost::python::init< class ::std::vector< unsigned long int, class ::std::allocator< unsigned long int > > const & >(""));
-    class_dc5522842bc75d8b9ac7b46020c60854.def(boost::python::init< class ::std::vector< unsigned long int, class ::std::allocator< unsigned long int > > const &, ::std::vector< unsigned long int, class ::std::allocator< unsigned long int > >::allocator_type const & >(""));
     class_dc5522842bc75d8b9ac7b46020c60854.def("assign", method_pointer_89c7276268985aa9aa70e2708595ca51, "");
     class_dc5522842bc75d8b9ac7b46020c60854.def("__len__", method_pointer_93bd870129e65bff9e6613a8c99ebd30, "");
     class_dc5522842bc75d8b9ac7b46020c60854.def("max_size", method_pointer_7fc7ec46b771522b996aeb9c2011fb9a, "");
