@@ -96,10 +96,12 @@ with open('src/cpp/STL.h', 'w') as filehandler:
     filehandler.write('\n')
     for sort in SETS:
         for T in SETS[sort]:
-            setstring = 'std::set< ' + T + ', std::' + sort + '< ' + T + ' >, std::allocator< ' + T + ' > >'
-            filehandler.write('\t\ttypedef ' + setstring + ' Set' + sort.capitalize() + capitalize(T) +';\n')
-            filehandler.write('\t\tSTATISKIT_STL_API Generator< ' + setstring + ' > generator(const ' + setstring + '& iterable);\n')
-            filehandler.write('\t\tSTATISKIT_STL_API bool insert(' + setstring + '& iterable, const ' + T + '& value);\n')
+            SET = 'Set' + sort.capitalize() + capitalize(T)
+            filehandler.write('\t\ttypedef std::set< ' + T + ', std::' + sort + '< ' + T + ' >, std::allocator< ' + T + ' > > ' + SET + ';\n')
+            GENERATOR = SET + 'Generator'
+            filehandler.write('\t\ttypedef Generator< ' + SET + ' > ' + GENERATOR + ';\n')
+            filehandler.write('\t\tSTATISKIT_STL_API ' + GENERATOR + ' generator(const ' + SET + '& iterable);\n')
+            filehandler.write('\t\tSTATISKIT_STL_API bool insert(' + SET + '& iterable, const ' + T + '& value);\n')
     filehandler.write('\n')
     filehandler.write('\t}\n}\n\n\n#endif')
 
@@ -107,10 +109,11 @@ with open('src/cpp/STL.cpp', 'w') as filehandler:
     filehandler.write('#include "STL.h"\n\nnamespace statiskit\n{\n\tnamespace stl\n\t{\n')
     for sort in SETS:
         for T in SETS[sort]:
-            setstring = 'std::set< ' + T + ', std::' + sort + '< ' + T + ' >, std::allocator< ' + T + ' > >'
-            filehandler.write('\t\tGenerator< ' + setstring + ' > generator(const ' + setstring + '& iterable)\n')
-            filehandler.write('\t\t{ return Generator< ' + setstring + ' >(iterable); }\n\n')
-            filehandler.write('\t\tbool insert(' + setstring + '& iterable, const ' + T + '& value)\n')
+            SET = 'Set' + sort.capitalize() + capitalize(T)
+            GENERATOR = SET + 'Generator'
+            filehandler.write('\t\t' + GENERATOR +' generator(const ' + SET + '& iterable)\n')
+            filehandler.write('\t\t{ return ' + GENERATOR + '(iterable); }\n\n')
+            filehandler.write('\t\tbool insert(' + SET + '& iterable, const ' + T + '& value)\n')
             filehandler.write('\t\t{ return iterable.insert(value).second; }\n\n')
     filehandler.write('\t}\n}')
 

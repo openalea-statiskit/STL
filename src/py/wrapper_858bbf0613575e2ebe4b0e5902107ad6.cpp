@@ -24,9 +24,9 @@ void wrapper_858bbf0613575e2ebe4b0e5902107ad6()
     ::std::set< double, struct ::std::less< double >, class ::std::allocator< double > >::size_type  (::std::set< double, ::std::less< double >, ::std::allocator< double > >::*method_pointer_4d624c7e98c054ad937392978d9dbd31)(::std::set< double, struct ::std::less< double >, class ::std::allocator< double > >::key_type const &) const = &::std::set< double, struct ::std::less< double >, class ::std::allocator< double > >::count;
     struct function_group
     {
-        static class ::statiskit::stl::Generator< class ::std::set< double, struct ::std::less< double >, class ::std::allocator< double > > >  function_e2d89d727bb55c85a14e5778e924d099(class ::std::set< double, struct ::std::less< double >, class ::std::allocator< double > > const & parameter_0)
+        static ::statiskit::stl::SetLessDoubleGenerator  function_e2d89d727bb55c85a14e5778e924d099(::statiskit::stl::SetLessDouble const & parameter_0)
         { return ::statiskit::stl::generator(parameter_0); }
-        static bool  function_992b8adef62d5217a35458a6c04194e7(class ::std::set< double, struct ::std::less< double >, class ::std::allocator< double > > & parameter_0, double const & parameter_1)
+        static bool  function_992b8adef62d5217a35458a6c04194e7(::statiskit::stl::SetLessDouble & parameter_0, double const & parameter_1)
         { return ::statiskit::stl::insert(parameter_0, parameter_1); }
     };
     boost::python::class_< class ::std::set< double, struct ::std::less< double >, class ::std::allocator< double > >, autowig::Held< class ::std::set< double, struct ::std::less< double >, class ::std::allocator< double > > >::Type > class_858bbf0613575e2ebe4b0e5902107ad6("_Set_858bbf0613575e2ebe4b0e5902107ad6", "", boost::python::no_init);

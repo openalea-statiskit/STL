@@ -4,16 +4,16 @@ namespace statiskit
 {
 	namespace stl
 	{
-		Generator< std::set< Index, std::less< Index >, std::allocator< Index > > > generator(const std::set< Index, std::less< Index >, std::allocator< Index > >& iterable)
-		{ return Generator< std::set< Index, std::less< Index >, std::allocator< Index > > >(iterable); }
+		SetLessIndexGenerator generator(const SetLessIndex& iterable)
+		{ return SetLessIndexGenerator(iterable); }
 
-		bool insert(std::set< Index, std::less< Index >, std::allocator< Index > >& iterable, const Index& value)
+		bool insert(SetLessIndex& iterable, const Index& value)
 		{ return iterable.insert(value).second; }
 
-		Generator< std::set< double, std::less< double >, std::allocator< double > > > generator(const std::set< double, std::less< double >, std::allocator< double > >& iterable)
-		{ return Generator< std::set< double, std::less< double >, std::allocator< double > > >(iterable); }
+		SetLessDoubleGenerator generator(const SetLessDouble& iterable)
+		{ return SetLessDoubleGenerator(iterable); }
 
-		bool insert(std::set< double, std::less< double >, std::allocator< double > >& iterable, const double& value)
+		bool insert(SetLessDouble& iterable, const double& value)
 		{ return iterable.insert(value).second; }
 
 	}

@@ -24,9 +24,9 @@ void wrapper_476c1c1f206251dba7af53c48f3f6e42()
     ::std::set< unsigned long int, struct ::std::less< unsigned long int >, class ::std::allocator< unsigned long int > >::size_type  (::std::set< unsigned long int, ::std::less< unsigned long int >, ::std::allocator< unsigned long int > >::*method_pointer_a8588ce6ea305ba5ab184a11728e1689)(::std::set< unsigned long int, struct ::std::less< unsigned long int >, class ::std::allocator< unsigned long int > >::key_type const &) const = &::std::set< unsigned long int, struct ::std::less< unsigned long int >, class ::std::allocator< unsigned long int > >::count;
     struct function_group
     {
-        static class ::statiskit::stl::Generator< class ::std::set< unsigned long int, struct ::std::less< unsigned long int >, class ::std::allocator< unsigned long int > > >  function_642e9bdbcd3d597b98c523340e8a23c1(class ::std::set< unsigned long int, struct ::std::less< unsigned long int >, class ::std::allocator< unsigned long int > > const & parameter_0)
+        static ::statiskit::stl::SetLessIndexGenerator  function_642e9bdbcd3d597b98c523340e8a23c1(::statiskit::stl::SetLessIndex const & parameter_0)
         { return ::statiskit::stl::generator(parameter_0); }
-        static bool  function_9beed4b3db865b0b9ea9906f3488f3da(class ::std::set< unsigned long int, struct ::std::less< unsigned long int >, class ::std::allocator< unsigned long int > > & parameter_0, ::statiskit::Index const & parameter_1)
+        static bool  function_9beed4b3db865b0b9ea9906f3488f3da(::statiskit::stl::SetLessIndex & parameter_0, ::statiskit::Index const & parameter_1)
         { return ::statiskit::stl::insert(parameter_0, parameter_1); }
     };
     boost::python::class_< class ::std::set< unsigned long int, struct ::std::less< unsigned long int >, class ::std::allocator< unsigned long int > >, autowig::Held< class ::std::set< unsigned long int, struct ::std::less< unsigned long int >, class ::std::allocator< unsigned long int > > >::Type > class_476c1c1f206251dba7af53c48f3f6e42("_Set_476c1c1f206251dba7af53c48f3f6e42", "", boost::python::no_init);
