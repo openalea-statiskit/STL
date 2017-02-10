@@ -41,17 +41,17 @@ def set_decoration(cls):
 for cls in __stl.std._Set:
     set_decoration(cls)
 
-import ctypes
-if sys.maxsize > 2**32:
-    cpp_int = ctypes.c_uint64
-else:
-    cpp_int = ctypes.c_uint32
+# import ctypes
+# if sys.maxsize > 2**32:
+#     cpp_int = ctypes.c_uint64
+# else:
+#     cpp_int = ctypes.c_uint32
 
-def wrapper_insert(f):
-    @wraps(f)
-    def insert(self, value):
-        value = cpp_int(value)
-        return f(self, value.value)
-    return insert
+# def wrapper_insert(f):
+#     @wraps(f)
+#     def insert(self, value):
+#         value = cpp_int(value)
+#         return f(self, value.value)
+#     return insert
 
-SetLessIndex.insert = wrapper_insert(SetLessIndex.insert)
+# SetLessIndex.insert = wrapper_insert(SetLessIndex.insert)
