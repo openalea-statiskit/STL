@@ -96,9 +96,10 @@ with open('src/cpp/STL.h', 'w') as filehandler:
     filehandler.write('\n')
     for sort in SETS:
         for T in SETS[sort]:
-            filehandler.write('\t\ttypedef std::set< ' + T + ', std::' + sort + '< ' + T + ' > > Set' + sort.capitalize() + capitalize(T) +';\n')
-            filehandler.write('\t\tSTATISKIT_STL_API Generator< std::set< ' + T + ', std::' + sort + '< ' + T + ' > > > generator(const std::set< ' + T + ', std::' + sort + '< ' + T + ' > >& iterable);\n')
-            filehandler.write('\t\tSTATISKIT_STL_API bool insert(std::set< ' + T + ', std::' + sort + '< ' + T + ' > >& iterable, const ' + T + '& value);\n')
+            setstring = 'std::set< ' + T + ', std::' + sort + '< ' + T + ' >, std::allocator< ' + T + ' > >'
+            filehandler.write('\t\ttypedef ' + setstring + ' Set' + sort.capitalize() + capitalize(T) +';\n')
+            filehandler.write('\t\tSTATISKIT_STL_API Generator< ' + setstring + ' > generator(const ' + setstring + '& iterable);\n')
+            filehandler.write('\t\tSTATISKIT_STL_API bool insert(' + setstring + '& iterable, const ' + T + '& value);\n')
     filehandler.write('\n')
     filehandler.write('\t}\n}\n\n\n#endif')
 

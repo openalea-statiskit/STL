@@ -73,12 +73,12 @@ namespace statiskit
 		typedef std::vector< Index > VectorIndex;
 		typedef std::vector< double > VectorDouble;
 
-		typedef std::set< Index, std::less< Index > > SetLessIndex;
-		STATISKIT_STL_API Generator< std::set< Index, std::less< Index > > > generator(const std::set< Index, std::less< Index > >& iterable);
-		STATISKIT_STL_API bool insert(std::set< Index, std::less< Index > >& iterable, const Index& value);
-		typedef std::set< double, std::less< double > > SetLessDouble;
-		STATISKIT_STL_API Generator< std::set< double, std::less< double > > > generator(const std::set< double, std::less< double > >& iterable);
-		STATISKIT_STL_API bool insert(std::set< double, std::less< double > >& iterable, const double& value);
+		typedef std::set< Index, std::less< Index >, std::allocator< Index > > SetLessIndex;
+		STATISKIT_STL_API Generator< std::set< Index, std::less< Index >, std::allocator< Index > > > generator(const std::set< Index, std::less< Index >, std::allocator< Index > >& iterable);
+		STATISKIT_STL_API bool insert(std::set< Index, std::less< Index >, std::allocator< Index > >& iterable, const Index& value);
+		typedef std::set< double, std::less< double >, std::allocator< double > > SetLessDouble;
+		STATISKIT_STL_API Generator< std::set< double, std::less< double >, std::allocator< double > > > generator(const std::set< double, std::less< double >, std::allocator< double > >& iterable);
+		STATISKIT_STL_API bool insert(std::set< double, std::less< double >, std::allocator< double > >& iterable, const double& value);
 
 	}
 }
