@@ -9,7 +9,7 @@ build:
   number: 0
 
 about:
-  home: statiskit.readthedocs.org
+  home: http://statiskit-stl.readthedocs.org
   license: CeCILL
 
 requirements:
