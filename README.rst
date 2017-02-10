@@ -1,5 +1,5 @@
-StatisKit-STL: Standard Template Library interfaces
-###################################################
+**StatisKit-STL**: Standard Template Library interfaces
+#######################################################
 
 The **STL** is a C++ template library providing four components called algorithms, containers, functional, and iterators.
 
