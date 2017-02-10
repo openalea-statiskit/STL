@@ -106,9 +106,10 @@ with open('src/cpp/STL.cpp', 'w') as filehandler:
     filehandler.write('#include "STL.h"\n\nnamespace statiskit\n{\n\tnamespace stl\n\t{\n')
     for sort in SETS:
         for T in SETS[sort]:
-            filehandler.write('\t\tGenerator< std::set< ' + T + ', std::' + sort + '< ' + T + ' > > > generator(const std::set< ' + T + ', std::' + sort + '< ' + T + ' > >& iterable)\n')
-            filehandler.write('\t\t{ return Generator< std::set< ' + T + ', std::' + sort + '< ' + T + ' > > >(iterable); }\n\n')
-            filehandler.write('\t\tbool insert(std::set< ' + T + ', std::' + sort + '< ' + T + ' > >& iterable, const ' + T + '& value)\n')
+            setstring = 'std::set< ' + T + ', std::' + sort + '< ' + T + ' >, std::allocator< ' + T + ' > >'
+            filehandler.write('\t\tGenerator< ' + setstring + ' > generator(const ' + setstring + '& iterable)\n')
+            filehandler.write('\t\t{ return Generator< ' + setstring + ' >(iterable); }\n\n')
+            filehandler.write('\t\tbool insert(' + setstring + '& iterable, const ' + T + '& value)\n')
             filehandler.write('\t\t{ return iterable.insert(value).second; }\n\n')
     filehandler.write('\t}\n}')
 
