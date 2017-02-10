@@ -20,9 +20,6 @@ void wrapper_107131f9768c56e794a9b0de728d1738()
     void  (::std::vector< double, ::std::allocator< double > >::*method_pointer_3fcbcdd89dc951b39073e310b61a04e9)(::std::vector< double, class ::std::allocator< double > >::size_type , ::std::vector< double, class ::std::allocator< double > >::value_type const &) = &::std::vector< double, class ::std::allocator< double > >::assign;
     ::std::vector< double, class ::std::allocator< double > >::size_type  (::std::vector< double, ::std::allocator< double > >::*method_pointer_2762c9c3801851f798933620de2a38c5)() const = &::std::vector< double, class ::std::allocator< double > >::size;
     ::std::vector< double, class ::std::allocator< double > >::size_type  (::std::vector< double, ::std::allocator< double > >::*method_pointer_441a8fd7a6105f52ab269c45a59d8985)() const = &::std::vector< double, class ::std::allocator< double > >::max_size;
-    void  (::std::vector< double, ::std::allocator< double > >::*method_pointer_cc6b2e20d84b5d1fb99f0ecb401c5dbe)(::std::vector< double, class ::std::allocator< double > >::size_type ) = &::std::vector< double, class ::std::allocator< double > >::resize;
-    void  (::std::vector< double, ::std::allocator< double > >::*method_pointer_d9f1c936f872578eb9f098967a8c1d30)(::std::vector< double, class ::std::allocator< double > >::size_type , ::std::vector< double, class ::std::allocator< double > >::value_type const &) = &::std::vector< double, class ::std::allocator< double > >::resize;
-    void  (::std::vector< double, ::std::allocator< double > >::*method_pointer_974010b191b3526f93b53ba098c213a9)() = &::std::vector< double, class ::std::allocator< double > >::shrink_to_fit;
     ::std::vector< double, class ::std::allocator< double > >::size_type  (::std::vector< double, ::std::allocator< double > >::*method_pointer_5c9706119c135c8ca0dbcadbab171935)() const = &::std::vector< double, class ::std::allocator< double > >::capacity;
     bool  (::std::vector< double, ::std::allocator< double > >::*method_pointer_fbb341f4fc855b39aa2eeb3c29aefdd1)() const = &::std::vector< double, class ::std::allocator< double > >::empty;
     void  (::std::vector< double, ::std::allocator< double > >::*method_pointer_56d1f2045f5952b983dea94ad5c12052)(::std::vector< double, class ::std::allocator< double > >::size_type ) = &::std::vector< double, class ::std::allocator< double > >::reserve;
@@ -48,9 +45,6 @@ void wrapper_107131f9768c56e794a9b0de728d1738()
     class_107131f9768c56e794a9b0de728d1738.def("assign", method_pointer_3fcbcdd89dc951b39073e310b61a04e9, "");
     class_107131f9768c56e794a9b0de728d1738.def("__len__", method_pointer_2762c9c3801851f798933620de2a38c5, "");
     class_107131f9768c56e794a9b0de728d1738.def("max_size", method_pointer_441a8fd7a6105f52ab269c45a59d8985, "");
-    class_107131f9768c56e794a9b0de728d1738.def("resize", method_pointer_cc6b2e20d84b5d1fb99f0ecb401c5dbe, "");
-    class_107131f9768c56e794a9b0de728d1738.def("resize", method_pointer_d9f1c936f872578eb9f098967a8c1d30, "");
-    class_107131f9768c56e794a9b0de728d1738.def("shrink_to_fit", method_pointer_974010b191b3526f93b53ba098c213a9, "");
     class_107131f9768c56e794a9b0de728d1738.def("capacity", method_pointer_5c9706119c135c8ca0dbcadbab171935, "");
     class_107131f9768c56e794a9b0de728d1738.def("empty", method_pointer_fbb341f4fc855b39aa2eeb3c29aefdd1, "");
     class_107131f9768c56e794a9b0de728d1738.def("reserve", method_pointer_56d1f2045f5952b983dea94ad5c12052, "");

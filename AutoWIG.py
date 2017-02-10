@@ -19,6 +19,11 @@ def gnerator_refactoring(asg):
             parameter = function.parameters[0].qualified_type.desugared_type
             if parameter.is_class:
                 function.parent = parameter.unqualified_type
+    for vector in asg['class ::std::vector'].specializations():
+        for method in vector.methods():
+            if method.localname in ['resize', 'shrink_to_fit']:
+                if isinstance(method.boost_python_export, bool):
+                    method.boost_python_export = False
     return asg
 
 asg = gnerator_refactoring(asg)
