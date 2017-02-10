@@ -13,9 +13,6 @@ void wrapper_858bbf0613575e2ebe4b0e5902107ad6()
     boost::python::object module_a5e4e9231d6351ccb0e06756b389f0af(boost::python::handle<  >(boost::python::borrowed(PyImport_AddModule(name_a5e4e9231d6351ccb0e06756b389f0af.c_str()))));
     boost::python::scope().attr("std") = module_a5e4e9231d6351ccb0e06756b389f0af;
     boost::python::scope scope_a5e4e9231d6351ccb0e06756b389f0af = module_a5e4e9231d6351ccb0e06756b389f0af;
-    ::std::set< double, struct ::std::less< double >, class ::std::allocator< double > >::key_compare  (::std::set< double, ::std::less< double >, ::std::allocator< double > >::*method_pointer_e2f6120de6835419a624cb4a1d18b521)() const = &::std::set< double, struct ::std::less< double >, class ::std::allocator< double > >::key_comp;
-    ::std::set< double, struct ::std::less< double >, class ::std::allocator< double > >::value_compare  (::std::set< double, ::std::less< double >, ::std::allocator< double > >::*method_pointer_3be34a51ad7f5cae939bb244d51836e7)() const = &::std::set< double, struct ::std::less< double >, class ::std::allocator< double > >::value_comp;
-    ::std::set< double, struct ::std::less< double >, class ::std::allocator< double > >::allocator_type  (::std::set< double, ::std::less< double >, ::std::allocator< double > >::*method_pointer_d2ea25a2517e5279b777100505197e28)() const = &::std::set< double, struct ::std::less< double >, class ::std::allocator< double > >::get_allocator;
     bool  (::std::set< double, ::std::less< double >, ::std::allocator< double > >::*method_pointer_ebd24ba22b5a57ba98343f75023d77a0)() const = &::std::set< double, struct ::std::less< double >, class ::std::allocator< double > >::empty;
     ::std::set< double, struct ::std::less< double >, class ::std::allocator< double > >::size_type  (::std::set< double, ::std::less< double >, ::std::allocator< double > >::*method_pointer_8ae51fee6ed45f33acf4a1926506397b)() const = &::std::set< double, struct ::std::less< double >, class ::std::allocator< double > >::size;
     ::std::set< double, struct ::std::less< double >, class ::std::allocator< double > >::size_type  (::std::set< double, ::std::less< double >, ::std::allocator< double > >::*method_pointer_7153735b781d505b9146233becb01637)() const = &::std::set< double, struct ::std::less< double >, class ::std::allocator< double > >::max_size;
@@ -31,13 +28,7 @@ void wrapper_858bbf0613575e2ebe4b0e5902107ad6()
     };
     boost::python::class_< class ::std::set< double, struct ::std::less< double >, class ::std::allocator< double > >, autowig::Held< class ::std::set< double, struct ::std::less< double >, class ::std::allocator< double > > >::Type > class_858bbf0613575e2ebe4b0e5902107ad6("_Set_858bbf0613575e2ebe4b0e5902107ad6", "", boost::python::no_init);
     class_858bbf0613575e2ebe4b0e5902107ad6.def(boost::python::init<  >(""));
-    class_858bbf0613575e2ebe4b0e5902107ad6.def(boost::python::init< struct ::std::less< double > const &, ::std::set< double, struct ::std::less< double >, class ::std::allocator< double > >::allocator_type const & >(""));
     class_858bbf0613575e2ebe4b0e5902107ad6.def(boost::python::init< class ::std::set< double, struct ::std::less< double >, class ::std::allocator< double > > const & >(""));
-    class_858bbf0613575e2ebe4b0e5902107ad6.def(boost::python::init< ::std::set< double, struct ::std::less< double >, class ::std::allocator< double > >::allocator_type const & >(""));
-    class_858bbf0613575e2ebe4b0e5902107ad6.def(boost::python::init< class ::std::set< double, struct ::std::less< double >, class ::std::allocator< double > > const &, ::std::set< double, struct ::std::less< double >, class ::std::allocator< double > >::allocator_type const & >(""));
-    class_858bbf0613575e2ebe4b0e5902107ad6.def("key_comp", method_pointer_e2f6120de6835419a624cb4a1d18b521, "");
-    class_858bbf0613575e2ebe4b0e5902107ad6.def("value_comp", method_pointer_3be34a51ad7f5cae939bb244d51836e7, "");
-    class_858bbf0613575e2ebe4b0e5902107ad6.def("get_allocator", method_pointer_d2ea25a2517e5279b777100505197e28, "");
     class_858bbf0613575e2ebe4b0e5902107ad6.def("empty", method_pointer_ebd24ba22b5a57ba98343f75023d77a0, "");
     class_858bbf0613575e2ebe4b0e5902107ad6.def("__len__", method_pointer_8ae51fee6ed45f33acf4a1926506397b, "");
     class_858bbf0613575e2ebe4b0e5902107ad6.def("max_size", method_pointer_7153735b781d505b9146233becb01637, "");

@@ -19,20 +19,24 @@ def stl_refactoring(asg):
             parameter = function.parameters[0].qualified_type.desugared_type
             if parameter.is_class:
                 function.parent = parameter.unqualified_type
-    for vector in asg['class ::std::vector'].specializations():
-        for method in vector.methods():
-            if method.localname in ['resize', 'shrink_to_fit']:
+    for cls in asg['class ::std::vector'].specializations():
+        for method in cls.methods():
+            if method.localname in ['resize', 'shrink_to_fit', 'operator[]']:
                 if isinstance(method.boost_python_export, bool):
                     method.boost_python_export = False
-        for constructor in vector.constructors():
-            if not(constructor.nb_parameters == 0 or constructor.nb_parameters == 1 and constructor.parameters[0].qualified_type.unqualified_type == vector):
+        for constructor in cls.constructors():
+            if not(constructor.nb_parameters == 0 or constructor.nb_parameters == 1 and constructor.parameters[0].qualified_type.unqualified_type == cls):
                 if isinstance(constructor.boost_python_export, bool):
                     constructor.boost_python_export = False
-    for vector in asg['class ::std::set'].specializations():
-        for method in vector.methods():
-            if method.localname in ['swap']:
+    for cls in asg['class ::std::set'].specializations():
+        for method in cls.methods():
+            if method.localname in ['swap', 'key_comp', 'value_comp', 'get_allocator']:
                 if isinstance(method.boost_python_export, bool):
                     method.boost_python_export = False
+        for constructor in cls.constructors():
+            if not(constructor.nb_parameters == 0 or constructor.nb_parameters == 1 and constructor.parameters[0].qualified_type.unqualified_type == cls):
+                if isinstance(constructor.boost_python_export, bool):
+                    constructor.boost_python_export = False
     return asg
 
 asg = stl_refactoring(asg)

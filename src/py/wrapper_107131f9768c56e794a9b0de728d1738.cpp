@@ -3,7 +3,6 @@
 
 namespace autowig
 {
-    void method_decorator_c38bd1a9de165b4a86de6b417f764214(class ::std::vector< double, class ::std::allocator< double > > & instance, ::std::vector< double, class ::std::allocator< double > >::size_type  param_in_0, const ::std::vector< double, class ::std::allocator< double > >::reference  param_out)     { instance.operator[](param_in_0) = param_out; }
     void method_decorator_beaa574a87dd59068311360e573c777c(class ::std::vector< double, class ::std::allocator< double > > & instance, ::std::vector< double, class ::std::allocator< double > >::size_type  param_in_0, const ::std::vector< double, class ::std::allocator< double > >::reference  param_out)     { instance.at(param_in_0) = param_out; }
     void method_decorator_22f52ccf4b785404ada1e9bcb9fa01aa(class ::std::vector< double, class ::std::allocator< double > > & instance, const ::std::vector< double, class ::std::allocator< double > >::reference  param_out)     { instance.front() = param_out; }
     void method_decorator_cae6ded0197f5723954a48c02008c60c(class ::std::vector< double, class ::std::allocator< double > > & instance, const ::std::vector< double, class ::std::allocator< double > >::reference  param_out)     { instance.back() = param_out; }
@@ -23,8 +22,6 @@ void wrapper_107131f9768c56e794a9b0de728d1738()
     ::std::vector< double, class ::std::allocator< double > >::size_type  (::std::vector< double, ::std::allocator< double > >::*method_pointer_5c9706119c135c8ca0dbcadbab171935)() const = &::std::vector< double, class ::std::allocator< double > >::capacity;
     bool  (::std::vector< double, ::std::allocator< double > >::*method_pointer_fbb341f4fc855b39aa2eeb3c29aefdd1)() const = &::std::vector< double, class ::std::allocator< double > >::empty;
     void  (::std::vector< double, ::std::allocator< double > >::*method_pointer_56d1f2045f5952b983dea94ad5c12052)(::std::vector< double, class ::std::allocator< double > >::size_type ) = &::std::vector< double, class ::std::allocator< double > >::reserve;
-    ::std::vector< double, class ::std::allocator< double > >::reference  (::std::vector< double, ::std::allocator< double > >::*method_pointer_c38bd1a9de165b4a86de6b417f764214)(::std::vector< double, class ::std::allocator< double > >::size_type ) = &::std::vector< double, class ::std::allocator< double > >::operator[];
-    ::std::vector< double, class ::std::allocator< double > >::const_reference  (::std::vector< double, ::std::allocator< double > >::*method_pointer_6ed16026f8925c70aefab0853e8876a8)(::std::vector< double, class ::std::allocator< double > >::size_type ) const = &::std::vector< double, class ::std::allocator< double > >::operator[];
     ::std::vector< double, class ::std::allocator< double > >::reference  (::std::vector< double, ::std::allocator< double > >::*method_pointer_beaa574a87dd59068311360e573c777c)(::std::vector< double, class ::std::allocator< double > >::size_type ) = &::std::vector< double, class ::std::allocator< double > >::at;
     ::std::vector< double, class ::std::allocator< double > >::const_reference  (::std::vector< double, ::std::allocator< double > >::*method_pointer_25da210bb3c75c269af3895505a003fd)(::std::vector< double, class ::std::allocator< double > >::size_type ) const = &::std::vector< double, class ::std::allocator< double > >::at;
     ::std::vector< double, class ::std::allocator< double > >::reference  (::std::vector< double, ::std::allocator< double > >::*method_pointer_22f52ccf4b785404ada1e9bcb9fa01aa)() = &::std::vector< double, class ::std::allocator< double > >::front;
@@ -44,9 +41,6 @@ void wrapper_107131f9768c56e794a9b0de728d1738()
     class_107131f9768c56e794a9b0de728d1738.def("capacity", method_pointer_5c9706119c135c8ca0dbcadbab171935, "");
     class_107131f9768c56e794a9b0de728d1738.def("empty", method_pointer_fbb341f4fc855b39aa2eeb3c29aefdd1, "");
     class_107131f9768c56e794a9b0de728d1738.def("reserve", method_pointer_56d1f2045f5952b983dea94ad5c12052, "");
-    class_107131f9768c56e794a9b0de728d1738.def("__getitem__", method_pointer_c38bd1a9de165b4a86de6b417f764214, boost::python::return_value_policy< boost::python::return_by_value >(), "");
-    class_107131f9768c56e794a9b0de728d1738.def("__getitem__", autowig::method_decorator_c38bd1a9de165b4a86de6b417f764214);
-    class_107131f9768c56e794a9b0de728d1738.def("__getitem__", method_pointer_6ed16026f8925c70aefab0853e8876a8, boost::python::return_value_policy< boost::python::return_by_value >(), "");
     class_107131f9768c56e794a9b0de728d1738.def("at", method_pointer_beaa574a87dd59068311360e573c777c, boost::python::return_value_policy< boost::python::return_by_value >(), "");
     class_107131f9768c56e794a9b0de728d1738.def("at", autowig::method_decorator_beaa574a87dd59068311360e573c777c);
     class_107131f9768c56e794a9b0de728d1738.def("at", method_pointer_25da210bb3c75c269af3895505a003fd, boost::python::return_value_policy< boost::python::return_by_value >(), "");
