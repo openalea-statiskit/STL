@@ -28,6 +28,11 @@ def gnerator_refactoring(asg):
             if not(constructor.nb_parameters == 0 or constructor.nb_parameters == 1 and constructor.parameters[0].qualified_type.unqualified_type == vector):
                 if isinstance(constructor.boost_python_export, bool):
                     constructor.boost_python_export = False
+    for vector in asg['class ::std::set'].specializations():
+        for method in vector.methods():
+            if method.localname in ['swap']:
+                if isinstance(method.boost_python_export, bool):
+                    method.boost_python_export = False
     return asg
 
 asg = gnerator_refactoring(asg)
