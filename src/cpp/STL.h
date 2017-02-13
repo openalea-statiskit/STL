@@ -40,8 +40,8 @@ namespace statiskit
                 public:
                     Generator(const T& iterable)
                     { 
-                        _cur = iterable.begin();
-                        _end = iterable.end();
+                        _cur = iterable.cbegin();
+                        _end = iterable.cend();
                     }
 
                     virtual ~Generator()
