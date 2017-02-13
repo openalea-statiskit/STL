@@ -2,11 +2,14 @@ from functools import wraps
 from __api__ import __stl
 import sys
 
-__all__ = ["SetLessIndex", "SetLessDouble"]
+__module__ = sys.modules[__name__]
 
+__all__ = []
 
-SetLessIndex = __stl.statiskit.stl.SetLessIndex
-SetLessDouble = __stl.statiskit.stl.SetLessDouble
+for var in dir(__stl.statiskit.stl):
+    if var.startswith('Set'):
+        setattr(__module__, var, getattr(__stl.statiskit.stl, var))
+        __all__.append(var)
 
 def set_decoration(cls):
 
@@ -40,18 +43,3 @@ def set_decoration(cls):
 
 for cls in __stl.std._Set:
     set_decoration(cls)
-
-import ctypes
-if sys.maxsize > 2**32:
-    cpp_int = ctypes.c_uint64
-else:
-    cpp_int = ctypes.c_uint32
-
-def wrapper_insert(f):
-    @wraps(f)
-    def insert(self, value):
-        value = cpp_int(value)
-        return f(self, value.value)
-    return insert
-
-SetLessIndex.insert = wrapper_insert(SetLessIndex.insert)
