@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <set>
+#include <string>
 
 #if defined WIN32 || defined _WIN32 || defined __CYGWIN__
     #ifdef LIBSTATISKIT_STL
@@ -70,17 +71,27 @@ namespace statiskit
             };
 
 
-		typedef std::vector< Index > VectorIndex;
+		typedef std::vector< size_t > VectorSizeT;
+		typedef std::vector< int > VectorInt;
 		typedef std::vector< double > VectorDouble;
+		typedef std::vector< std::string > VectorString;
 
-		typedef std::set< Index, std::less< Index >, std::allocator< Index > > SetLessIndex;
-		typedef Generator< SetLessIndex > SetLessIndexGenerator;
-		STATISKIT_STL_API SetLessIndexGenerator generator(const SetLessIndex& iterable);
-		STATISKIT_STL_API bool insert(SetLessIndex& iterable, const Index& value);
+		typedef std::set< size_t, std::less< size_t >, std::allocator< size_t > > SetLessSizeT;
+		typedef Generator< SetLessSizeT > SetLessSizeTGenerator;
+		STATISKIT_STL_API SetLessSizeTGenerator generator(const SetLessSizeT& iterable);
+		STATISKIT_STL_API bool insert(SetLessSizeT& iterable, const size_t& value);
+		typedef std::set< int, std::less< int >, std::allocator< int > > SetLessInt;
+		typedef Generator< SetLessInt > SetLessIntGenerator;
+		STATISKIT_STL_API SetLessIntGenerator generator(const SetLessInt& iterable);
+		STATISKIT_STL_API bool insert(SetLessInt& iterable, const int& value);
 		typedef std::set< double, std::less< double >, std::allocator< double > > SetLessDouble;
 		typedef Generator< SetLessDouble > SetLessDoubleGenerator;
 		STATISKIT_STL_API SetLessDoubleGenerator generator(const SetLessDouble& iterable);
 		STATISKIT_STL_API bool insert(SetLessDouble& iterable, const double& value);
+		typedef std::set< std::string, std::less< std::string >, std::allocator< std::string > > SetLessString;
+		typedef Generator< SetLessString > SetLessStringGenerator;
+		STATISKIT_STL_API SetLessStringGenerator generator(const SetLessString& iterable);
+		STATISKIT_STL_API bool insert(SetLessString& iterable, const std::string& value);
 
 	}
 }
