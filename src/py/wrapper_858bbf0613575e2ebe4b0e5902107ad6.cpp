@@ -1,6 +1,15 @@
 #include "_stl.h"
 
 
+#if defined(_MSC_VER)
+    #if (_MSC_VER == 1900)
+namespace boost
+{
+    template <> class ::std::set< double, struct ::std::less< double >, class ::std::allocator< double > > const volatile * get_pointer<class ::std::set< double, struct ::std::less< double >, class ::std::allocator< double > > const volatile >(class ::std::set< double, struct ::std::less< double >, class ::std::allocator< double > > const volatile *c) { return c; }
+}
+    #endif
+#endif
+
 namespace autowig
 {
 }

@@ -1,7 +1,7 @@
 #include "_stl.h"
 
 
-void wrapper_d906f781aa025adaaf7772f2c8105aa0()
+void wrapper_f1ab29faa1815285a06ca52391d1425f()
 {
 
     std::string name_fa414b05d29e5f4ea0b6d6cb5cf81b01 = boost::python::extract< std::string >(boost::python::scope().attr("__name__") + ".statiskit");

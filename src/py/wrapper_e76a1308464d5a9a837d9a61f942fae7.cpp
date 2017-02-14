@@ -1,6 +1,15 @@
 #include "_stl.h"
 
 
+#if defined(_MSC_VER)
+    #if (_MSC_VER == 1900)
+namespace boost
+{
+    template <> class ::statiskit::stl::Generator< class ::std::set< int, struct ::std::less< int >, class ::std::allocator< int > > > const volatile * get_pointer<class ::statiskit::stl::Generator< class ::std::set< int, struct ::std::less< int >, class ::std::allocator< int > > > const volatile >(class ::statiskit::stl::Generator< class ::std::set< int, struct ::std::less< int >, class ::std::allocator< int > > > const volatile *c) { return c; }
+}
+    #endif
+#endif
+
 namespace autowig
 {
     void method_decorator_3433eb819fff55e998cbd8421b3bcb82(class ::statiskit::stl::Generator< class ::std::set< int, struct ::std::less< int >, class ::std::allocator< int > > > & instance, class ::statiskit::stl::Generator< class ::std::set< int, struct ::std::less< int >, class ::std::allocator< int > > > & param_out)     { instance.operator++() = param_out; }

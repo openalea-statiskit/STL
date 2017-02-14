@@ -1,6 +1,15 @@
 #include "_stl.h"
 
 
+#if defined(_MSC_VER)
+    #if (_MSC_VER == 1900)
+namespace boost
+{
+    template <> class ::std::vector< int, class ::std::allocator< int > > const volatile * get_pointer<class ::std::vector< int, class ::std::allocator< int > > const volatile >(class ::std::vector< int, class ::std::allocator< int > > const volatile *c) { return c; }
+}
+    #endif
+#endif
+
 namespace autowig
 {
     void method_decorator_bb1e0852f2ca56c094260a03787426c7(class ::std::vector< int, class ::std::allocator< int > > & instance, ::std::vector< int, class ::std::allocator< int > >::size_type  param_in_0, const ::std::vector< int, class ::std::allocator< int > >::reference  param_out)     { instance.at(param_in_0) = param_out; }
