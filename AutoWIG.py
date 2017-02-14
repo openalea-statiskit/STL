@@ -46,7 +46,8 @@ nodes = [typedef.qualified_type.unqualified_type for typedef in asg['::statiskit
 nodes = list(itertools.chain(*[node.bases(inherited=True) for node in nodes])) + nodes + asg['::statiskit::stl'].declarations()
 wrappers = autowig.generator(asg, nodes, module='src/py/_stl.cpp',
                                          decorator='src/py/statiskit/stl/_stl.py',
-                                         closure=False)
+                                         closure=False,
+                                         helder='std::shared_ptr')
 wrappers.write()
 
 s = subprocess.Popen(['scons', 'py', '-j7', '-k', '--eigen-static-assert=yes'], stderr=subprocess.PIPE)
