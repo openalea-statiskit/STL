@@ -42,7 +42,7 @@ def stl_refactoring(asg):
 asg = stl_refactoring(asg)
 
 autowig.generator.plugin = 'boost_python'
-nodes = [typedef.qualified_type.unqualified_type for typedef in asg['::statiskit::stl'].typedefs()]
+nodes = [typedef.qualified_type.unqualified_type for typedef in asg['::statiskit::stl'].typedefs()] + asg['class ::std::basic_string'].specializations()
 nodes = list(itertools.chain(*[node.bases(inherited=True) for node in nodes])) + nodes + asg['::statiskit::stl'].declarations()
 wrappers = autowig.generator(asg, nodes, module='src/py/_stl.cpp',
                                          decorator='src/py/statiskit/stl/_stl.py',

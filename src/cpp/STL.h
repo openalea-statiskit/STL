@@ -29,8 +29,6 @@
 
 namespace statiskit
 {
-    typedef std::size_t Index;
-
     namespace stl
     {
 
