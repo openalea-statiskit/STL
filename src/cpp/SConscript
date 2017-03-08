@@ -1,9 +1,6 @@
 # -*-python-*-
 
-import os
-import platform
-
-system = platform.system().lower()
+from SCons.Errors import EnvironmentError
 
 Import("env")
 
