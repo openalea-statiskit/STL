@@ -25,9 +25,7 @@ requirements:
     - libboost
     - python
 
-test:                                                           
-  imports:
-    - statiskit.linalg          
+test:                                                                    
   source_files:                                
     - test/test_*.py
   requires:
