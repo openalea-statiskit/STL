@@ -68,6 +68,8 @@ namespace statiskit
                     typename T::const_iterator _end;
             };
 
+        typedef std::string String;
+
 
 		typedef std::vector< size_t > VectorSizeT;
 		typedef std::vector< int > VectorInt;

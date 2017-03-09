@@ -1,6 +1,15 @@
 #include "_stl.h"
 
 
+
+namespace autowig
+{
+
+    void method_decorator_beaa574a87dd59068311360e573c777c(class ::std::vector< double, class ::std::allocator< double > > & instance, ::std::vector< double, class ::std::allocator< double > >::size_type  param_in_0, const ::std::vector< double, class ::std::allocator< double > >::reference  param_out)     { instance.at(param_in_0) = param_out; }
+    void method_decorator_22f52ccf4b785404ada1e9bcb9fa01aa(class ::std::vector< double, class ::std::allocator< double > > & instance, const ::std::vector< double, class ::std::allocator< double > >::reference  param_out)     { instance.front() = param_out; }
+    void method_decorator_cae6ded0197f5723954a48c02008c60c(class ::std::vector< double, class ::std::allocator< double > > & instance, const ::std::vector< double, class ::std::allocator< double > >::reference  param_out)     { instance.back() = param_out; }
+}
+
 #if defined(_MSC_VER)
     #if (_MSC_VER == 1900)
 namespace boost
@@ -10,12 +19,6 @@ namespace boost
     #endif
 #endif
 
-namespace autowig
-{
-    void method_decorator_beaa574a87dd59068311360e573c777c(class ::std::vector< double, class ::std::allocator< double > > & instance, ::std::vector< double, class ::std::allocator< double > >::size_type  param_in_0, const ::std::vector< double, class ::std::allocator< double > >::reference  param_out)     { instance.at(param_in_0) = param_out; }
-    void method_decorator_22f52ccf4b785404ada1e9bcb9fa01aa(class ::std::vector< double, class ::std::allocator< double > > & instance, const ::std::vector< double, class ::std::allocator< double > >::reference  param_out)     { instance.front() = param_out; }
-    void method_decorator_cae6ded0197f5723954a48c02008c60c(class ::std::vector< double, class ::std::allocator< double > > & instance, const ::std::vector< double, class ::std::allocator< double > >::reference  param_out)     { instance.back() = param_out; }
-}
 
 
 void wrapper_107131f9768c56e794a9b0de728d1738()

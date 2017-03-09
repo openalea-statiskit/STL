@@ -1,17 +1,10 @@
 #include "_stl.h"
 
 
-#if defined(_MSC_VER)
-    #if (_MSC_VER == 1900)
-namespace boost
-{
-    template <> class ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > > const volatile * get_pointer<class ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > > const volatile >(class ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > > const volatile *c) { return c; }
-}
-    #endif
-#endif
 
 namespace autowig
 {
+
     void method_decorator_5c2439bfc6cc537ab09bd5c61e98ccac(class ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > > & instance, ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > >::size_type  param_in_0, const ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > >::reference  param_out)     { instance.operator[](param_in_0) = param_out; }
     void method_decorator_2b1847ed6305532081540fcee3a3039e(class ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > > & instance, ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > >::size_type  param_in_0, const ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > >::reference  param_out)     { instance.at(param_in_0) = param_out; }
     void method_decorator_492d67ed747f57fa96bdcfb12ff2b092(class ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > > & instance, const ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > >::reference  param_out)     { instance.front() = param_out; }
@@ -32,6 +25,16 @@ namespace autowig
     void method_decorator_d79babe2f6b5551b9c1f4b45a60fa615(class ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > > & instance, ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > >::size_type  param_in_0, ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > >::size_type  param_in_1, class ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > > const & param_in_2, ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > >::size_type  param_in_3, ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > >::size_type  param_in_4, class ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > > & param_out)     { instance.replace(param_in_0, param_in_1, param_in_2, param_in_3, param_in_4) = param_out; }
     void method_decorator_c594a873809f5a809823c79d37413371(class ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > > & instance, ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > >::size_type  param_in_0, ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > >::size_type  param_in_1, ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > >::size_type  param_in_2, char  param_in_3, class ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > > & param_out)     { instance.replace(param_in_0, param_in_1, param_in_2, param_in_3) = param_out; }
 }
+
+#if defined(_MSC_VER)
+    #if (_MSC_VER == 1900)
+namespace boost
+{
+    template <> class ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > > const volatile * get_pointer<class ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > > const volatile >(class ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > > const volatile *c) { return c; }
+}
+    #endif
+#endif
+
 
 
 void wrapper_448c20257e485acda59dc59305fceb58()
@@ -90,9 +93,6 @@ void wrapper_448c20257e485acda59dc59305fceb58()
     ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > >::size_type  (::std::basic_string< char, ::std::char_traits< char >, ::std::allocator< char > >::*method_pointer_0e10a3100cc4580294370110e0d3d099)(class ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > > const &, ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > >::size_type ) const = &::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > >::find_last_not_of;
     ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > >::size_type  (::std::basic_string< char, ::std::char_traits< char >, ::std::allocator< char > >::*method_pointer_00d7f7a52f90511581fafe208f4dcb60)(char , ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > >::size_type ) const = &::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > >::find_last_not_of;
     class ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > >  (::std::basic_string< char, ::std::char_traits< char >, ::std::allocator< char > >::*method_pointer_7a39f22a25b65971a71a56fe79fe78c4)(::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > >::size_type , ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > >::size_type ) const = &::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > >::substr;
-    int  (::std::basic_string< char, ::std::char_traits< char >, ::std::allocator< char > >::*method_pointer_15f85103add45de0ab54f7e97d828f36)(class ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > > const &) const = &::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > >::compare;
-    int  (::std::basic_string< char, ::std::char_traits< char >, ::std::allocator< char > >::*method_pointer_d8238edb301c56b2bbaae93a574e2100)(::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > >::size_type , ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > >::size_type , class ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > > const &) const = &::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > >::compare;
-    int  (::std::basic_string< char, ::std::char_traits< char >, ::std::allocator< char > >::*method_pointer_92848a1b72755c47a3b415d3bb52a91d)(::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > >::size_type , ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > >::size_type , class ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > > const &, ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > >::size_type , ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > >::size_type ) const = &::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > >::compare;
     boost::python::class_< class ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > >, autowig::Held< class ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > > >::Type > class_448c20257e485acda59dc59305fceb58("_BasicString_448c20257e485acda59dc59305fceb58", "", boost::python::no_init);
     class_448c20257e485acda59dc59305fceb58.def(boost::python::init<  >(""));
     class_448c20257e485acda59dc59305fceb58.def(boost::python::init< class ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > > const & >(""));
@@ -165,9 +165,6 @@ void wrapper_448c20257e485acda59dc59305fceb58()
     class_448c20257e485acda59dc59305fceb58.def("find_last_not_of", method_pointer_0e10a3100cc4580294370110e0d3d099, "");
     class_448c20257e485acda59dc59305fceb58.def("find_last_not_of", method_pointer_00d7f7a52f90511581fafe208f4dcb60, "");
     class_448c20257e485acda59dc59305fceb58.def("substr", method_pointer_7a39f22a25b65971a71a56fe79fe78c4, "");
-    class_448c20257e485acda59dc59305fceb58.def("compare", method_pointer_15f85103add45de0ab54f7e97d828f36, "");
-    class_448c20257e485acda59dc59305fceb58.def("compare", method_pointer_d8238edb301c56b2bbaae93a574e2100, "");
-    class_448c20257e485acda59dc59305fceb58.def("compare", method_pointer_92848a1b72755c47a3b415d3bb52a91d, "");
     class_448c20257e485acda59dc59305fceb58.def_readonly("npos", ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > >::npos, "");
 
 }
