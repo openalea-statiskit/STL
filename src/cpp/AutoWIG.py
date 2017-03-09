@@ -2,6 +2,8 @@ import autowig
 import itertools
 
 def controller(asg):
+    # import ipdb
+    # ipdb.set_trace()
     autowig.controller.plugin = 'default'
     asg = autowig.controller(asg)
     for function in asg['::statiskit::stl'].functions():
@@ -40,6 +42,9 @@ def controller(asg):
     if 'class ::std::default_delete' in asg:
         for cls in asg['class ::std::default_delete'].specializations():
             cls.boost_python_export = False
+    for mtd in asg['::statiskit::stl::String'].qualified_type.desugared_type.unqualified_type.methods():
+        if mtd.localname == 'compare':
+            mtd.boost_python_export = False
     return asg
 
 def generator(asg, module, decorator):

@@ -86,6 +86,8 @@ namespace statiskit
                     typename T::const_iterator _end;
             };
 
+        typedef std::string String;
+
 """
 
 def capitalize(T):

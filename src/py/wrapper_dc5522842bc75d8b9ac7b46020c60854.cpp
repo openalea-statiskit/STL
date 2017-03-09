@@ -1,6 +1,15 @@
 #include "_stl.h"
 
 
+
+namespace autowig
+{
+
+    void method_decorator_8b88bc9a239b540fa395d739eae16a55(class ::std::vector< unsigned long int, class ::std::allocator< unsigned long int > > & instance, ::std::vector< unsigned long int, class ::std::allocator< unsigned long int > >::size_type  param_in_0, const ::std::vector< unsigned long int, class ::std::allocator< unsigned long int > >::reference  param_out)     { instance.at(param_in_0) = param_out; }
+    void method_decorator_5b1d5ac22ef65a55906e5618a3254023(class ::std::vector< unsigned long int, class ::std::allocator< unsigned long int > > & instance, const ::std::vector< unsigned long int, class ::std::allocator< unsigned long int > >::reference  param_out)     { instance.front() = param_out; }
+    void method_decorator_7abbcd1bb584526dbd128179d2ba2286(class ::std::vector< unsigned long int, class ::std::allocator< unsigned long int > > & instance, const ::std::vector< unsigned long int, class ::std::allocator< unsigned long int > >::reference  param_out)     { instance.back() = param_out; }
+}
+
 #if defined(_MSC_VER)
     #if (_MSC_VER == 1900)
 namespace boost
@@ -10,12 +19,6 @@ namespace boost
     #endif
 #endif
 
-namespace autowig
-{
-    void method_decorator_8b88bc9a239b540fa395d739eae16a55(class ::std::vector< unsigned long int, class ::std::allocator< unsigned long int > > & instance, ::std::vector< unsigned long int, class ::std::allocator< unsigned long int > >::size_type  param_in_0, const ::std::vector< unsigned long int, class ::std::allocator< unsigned long int > >::reference  param_out)     { instance.at(param_in_0) = param_out; }
-    void method_decorator_5b1d5ac22ef65a55906e5618a3254023(class ::std::vector< unsigned long int, class ::std::allocator< unsigned long int > > & instance, const ::std::vector< unsigned long int, class ::std::allocator< unsigned long int > >::reference  param_out)     { instance.front() = param_out; }
-    void method_decorator_7abbcd1bb584526dbd128179d2ba2286(class ::std::vector< unsigned long int, class ::std::allocator< unsigned long int > > & instance, const ::std::vector< unsigned long int, class ::std::allocator< unsigned long int > >::reference  param_out)     { instance.back() = param_out; }
-}
 
 
 void wrapper_dc5522842bc75d8b9ac7b46020c60854()

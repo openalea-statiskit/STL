@@ -1,6 +1,13 @@
 #include "_stl.h"
 
 
+
+namespace autowig
+{
+
+    void method_decorator_9ee3d1b710825c39bad8dfdf4db13de4(class ::statiskit::stl::Generator< class ::std::set< unsigned long int, struct ::std::less< unsigned long int >, class ::std::allocator< unsigned long int > > > & instance, class ::statiskit::stl::Generator< class ::std::set< unsigned long int, struct ::std::less< unsigned long int >, class ::std::allocator< unsigned long int > > > & param_out)     { instance.operator++() = param_out; }
+}
+
 #if defined(_MSC_VER)
     #if (_MSC_VER == 1900)
 namespace boost
@@ -10,10 +17,6 @@ namespace boost
     #endif
 #endif
 
-namespace autowig
-{
-    void method_decorator_9ee3d1b710825c39bad8dfdf4db13de4(class ::statiskit::stl::Generator< class ::std::set< unsigned long int, struct ::std::less< unsigned long int >, class ::std::allocator< unsigned long int > > > & instance, class ::statiskit::stl::Generator< class ::std::set< unsigned long int, struct ::std::less< unsigned long int >, class ::std::allocator< unsigned long int > > > & param_out)     { instance.operator++() = param_out; }
-}
 
 
 void wrapper_10b14312eeb655268489cd34090870cf()
