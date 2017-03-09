@@ -26,9 +26,11 @@ requirements:
     - python
 
 test:                                                           
+  imports:
+    - statiskit.linalg          
   source_files:                                
     - test/test_*.py
   requires:
-    - python-dbg
+    - python-dev
   commands:                                       
    - nosetests test -x -s -v
