@@ -5,12 +5,12 @@ from SCons.Errors import EnvironmentError
 
 env = Environment(tools = ['toolchain'])
 
-VECTORS = ['size_t',
+VECTORS = ['Index',
            'int',
            'double',
            'std::string']
 
-SETS = { 'less': ['size_t',
+SETS = { 'less': ['Index',
                   'int',
                   'double',
                   'std::string']}
@@ -47,6 +47,8 @@ HEADER = """\
 
 namespace statiskit
 {
+    typedef unsigned long int Index;
+
     namespace stl
     {
 

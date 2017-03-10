@@ -29,6 +29,8 @@
 
 namespace statiskit
 {
+    typedef unsigned long int Index;
+
     namespace stl
     {
 
@@ -71,15 +73,15 @@ namespace statiskit
         typedef std::string String;
 
 
-		typedef std::vector< size_t > VectorSizeT;
+		typedef std::vector< Index > VectorIndex;
 		typedef std::vector< int > VectorInt;
 		typedef std::vector< double > VectorDouble;
 		typedef std::vector< std::string > VectorString;
 
-		typedef std::set< size_t, std::less< size_t >, std::allocator< size_t > > SetLessSizeT;
-		typedef Generator< SetLessSizeT > SetLessSizeTGenerator;
-		STATISKIT_STL_API SetLessSizeTGenerator generator(const SetLessSizeT& iterable);
-		STATISKIT_STL_API bool insert(SetLessSizeT& iterable, const size_t& value);
+		typedef std::set< Index, std::less< Index >, std::allocator< Index > > SetLessIndex;
+		typedef Generator< SetLessIndex > SetLessIndexGenerator;
+		STATISKIT_STL_API SetLessIndexGenerator generator(const SetLessIndex& iterable);
+		STATISKIT_STL_API bool insert(SetLessIndex& iterable, const Index& value);
 		typedef std::set< int, std::less< int >, std::allocator< int > > SetLessInt;
 		typedef Generator< SetLessInt > SetLessIntGenerator;
 		STATISKIT_STL_API SetLessIntGenerator generator(const SetLessInt& iterable);

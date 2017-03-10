@@ -1,4 +1,9 @@
-from _stl import __stl
+import _stl
+import __stl
+
+from functools import wraps
+
+__all__ = []
 
 def generator_decoration(cls):
 
