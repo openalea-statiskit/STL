@@ -44,7 +44,7 @@ def controller(asg):
             cls.boost_python_export = False
     for mtd in asg['::statiskit::stl::String'].qualified_type.desugared_type.unqualified_type.methods():
         #if mtd.localname in ['substr', 'compare']:
-        mtd.boost_python_export = False
+         mtd.boost_python_export = False
     return asg
 
 def generator(asg, module, decorator):
