@@ -4,10 +4,10 @@ namespace statiskit
 {
 	namespace stl
 	{
-		SetLessSizeTGenerator generator(const SetLessSizeT& iterable)
-		{ return SetLessSizeTGenerator(iterable); }
+		SetLessIndexGenerator generator(const SetLessIndex& iterable)
+		{ return SetLessIndexGenerator(iterable); }
 
-		bool insert(SetLessSizeT& iterable, const size_t& value)
+		bool insert(SetLessIndex& iterable, const Index& value)
 		{ return iterable.insert(value).second; }
 
 		SetLessIntGenerator generator(const SetLessInt& iterable)

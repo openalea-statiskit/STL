@@ -1,17 +1,18 @@
-from functools import wraps
-from __api__ import __stl
-import sys
+import _stl
+import __stl
 
-__module__ = sys.modules[__name__]
+from functools import wraps
+import sys
 
 __all__ = []
 
+__module__ = sys.modules[__name__]
 for var in dir(__stl.statiskit.stl):
     if var.startswith('Set'):
         setattr(__module__, var, getattr(__stl.statiskit.stl, var))
         __all__.append(var)
 
-def set_decoration(cls):
+def decoration(cls):
 
     def wrapper__init__(f):
         @wraps(f)
@@ -42,4 +43,4 @@ def set_decoration(cls):
     cls._repr_latex_ = _repr_latex_
 
 for cls in __stl.std._Set:
-    set_decoration(cls)
+    decoration(cls)
