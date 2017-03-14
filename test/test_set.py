@@ -1,6 +1,12 @@
-import unittest
 from statiskit import stl
 
+import unittest
+from nose.plugins.attrib import attr
+
+@attr(linux=True, 
+      osx=True,
+      win=True,
+      level=1)
 class TestSet(unittest.TestCase):
 
     def test___initialization(self):
