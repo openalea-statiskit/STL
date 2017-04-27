@@ -1,4 +1,12 @@
-.sconsign.dblite
+doc/html
+doc/latex
+doc/Doxyfile
 build
-*.pkl
+*.so
 *.pyc
+*~
+.sconsign.dblite
+ASG.pkl
+.~lock.*
+*.sublime-workspace
+.coverage
