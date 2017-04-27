@@ -4,6 +4,12 @@ namespace statiskit
 {
 	namespace stl
 	{
+		SetIndexGenerator generator(const SetIndex& iterable)
+		{ return SetIndexGenerator(iterable); }
+
+		bool insert(SetIndex& iterable, const Index& value)
+		{ return iterable.insert(value).second; }
+
 		SetLessIndexGenerator generator(const SetLessIndex& iterable)
 		{ return SetLessIndexGenerator(iterable); }
 

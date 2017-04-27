@@ -8,7 +8,8 @@ VECTORS = ['Index',
 SETS = { 'less': ['Index',
                   'int',
                   'double',
-                  'std::string']}
+                  'std::string'],
+         'none': ['Index']}
 
 HEADER = """\
 #ifndef STATISKIT_STL_H
@@ -16,6 +17,7 @@ HEADER = """\
 
 #include <vector>
 #include <set>
+#include <unordered_set>
 #include <string>
 
 #if defined WIN32 || defined _WIN32 || defined __CYGWIN__
@@ -43,6 +45,7 @@ HEADER = """\
 namespace statiskit
 {
     typedef unsigned long int Index;
+    typedef std::set< Index > Indices;
 
     namespace stl
     {
@@ -98,12 +101,20 @@ with open('STL.h', 'w') as filehandler:
     filehandler.write('\n')
     for sort in SETS:
         for T in SETS[sort]:
-            SET = 'Set' + sort.capitalize() + capitalize(T)
-            filehandler.write('\t\ttypedef std::set< ' + T + ', std::' + sort + '< ' + T + ' >, std::allocator< ' + T + ' > > ' + SET + ';\n')
-            GENERATOR = SET + 'Generator'
-            filehandler.write('\t\ttypedef Generator< ' + SET + ' > ' + GENERATOR + ';\n')
-            filehandler.write('\t\tSTATISKIT_STL_API ' + GENERATOR + ' generator(const ' + SET + '& iterable);\n')
-            filehandler.write('\t\tSTATISKIT_STL_API bool insert(' + SET + '& iterable, const ' + T + '& value);\n')
+            if sort == 'none':
+                SET = 'Set' + capitalize(T)
+                filehandler.write('\t\ttypedef std::unordered_set< ' + T + ' > ' + SET + ';\n')
+                GENERATOR = SET + 'Generator'
+                filehandler.write('\t\ttypedef Generator< ' + SET + ' > ' + GENERATOR + ';\n')
+                filehandler.write('\t\tSTATISKIT_STL_API ' + GENERATOR + ' generator(const ' + SET + '& iterable);\n')
+                filehandler.write('\t\tSTATISKIT_STL_API bool insert(' + SET + '& iterable, const ' + T + '& value);\n')
+            else:
+                SET = 'Set' + sort.capitalize() + capitalize(T)
+                filehandler.write('\t\ttypedef std::set< ' + T + ', std::' + sort + '< ' + T + ' >, std::allocator< ' + T + ' > > ' + SET + ';\n')
+                GENERATOR = SET + 'Generator'
+                filehandler.write('\t\ttypedef Generator< ' + SET + ' > ' + GENERATOR + ';\n')
+                filehandler.write('\t\tSTATISKIT_STL_API ' + GENERATOR + ' generator(const ' + SET + '& iterable);\n')
+                filehandler.write('\t\tSTATISKIT_STL_API bool insert(' + SET + '& iterable, const ' + T + '& value);\n')
     filehandler.write('\n')
     filehandler.write('\t}\n}\n\n\n#endif')
 
@@ -111,6 +122,8 @@ with open('STL.cpp', 'w') as filehandler:
     filehandler.write('#include "STL.h"\n\nnamespace statiskit\n{\n\tnamespace stl\n\t{\n')
     for sort in SETS:
         for T in SETS[sort]:
+            if sort == 'none':
+                sort = ''
             SET = 'Set' + sort.capitalize() + capitalize(T)
             GENERATOR = SET + 'Generator'
             filehandler.write('\t\t' + GENERATOR +' generator(const ' + SET + '& iterable)\n')

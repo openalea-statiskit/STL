@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <set>
+#include <unordered_set>
 #include <string>
 
 #if defined WIN32 || defined _WIN32 || defined __CYGWIN__
@@ -30,6 +31,7 @@
 namespace statiskit
 {
     typedef unsigned long int Index;
+    typedef std::set< Index > Indices;
 
     namespace stl
     {
@@ -78,6 +80,10 @@ namespace statiskit
 		typedef std::vector< double > VectorDouble;
 		typedef std::vector< std::string > VectorString;
 
+		typedef std::unordered_set< Index > SetIndex;
+		typedef Generator< SetIndex > SetIndexGenerator;
+		STATISKIT_STL_API SetIndexGenerator generator(const SetIndex& iterable);
+		STATISKIT_STL_API bool insert(SetIndex& iterable, const Index& value);
 		typedef std::set< Index, std::less< Index >, std::allocator< Index > > SetLessIndex;
 		typedef Generator< SetLessIndex > SetLessIndexGenerator;
 		STATISKIT_STL_API SetLessIndexGenerator generator(const SetLessIndex& iterable);
