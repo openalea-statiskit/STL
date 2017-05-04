@@ -12,7 +12,7 @@ for var in dir(__stl.statiskit.stl):
         setattr(__module__, var, getattr(__stl.statiskit.stl, var))
         __all__.append(var)
 
-def decoration(cls):
+def decorator(cls):
 
     def wrapper__init__(f):
         @wraps(f)
@@ -73,4 +73,4 @@ def decoration(cls):
     cls._repr_latex_ = _repr_latex_
 
 for cls in __stl.std._Vector:
-    decoration(cls)
+    decorator(cls)
