@@ -96,7 +96,7 @@ void wrapper_dc5522842bc75d8b9ac7b46020c60854()
                 if(!py_elem_hdl.get())
                 { break; }
                 boost::python::object py_elem_obj(py_elem_hdl);
-                result.push_back((unsigned long int )(boost::python::extract< unsigned long int  >(py_elem_obj)));
+                result.push_back(boost::python::extract< unsigned long int  >(py_elem_obj));
             }
         }
     };

@@ -1,11 +1,9 @@
 import autowig
 import itertools
 
-def controller(asg):
-    # import ipdb
-    # ipdb.set_trace()
+def controller(asg, **kwargs):
     autowig.controller.plugin = 'default'
-    asg = autowig.controller(asg)
+    asg = autowig.controller(asg, **kwargs)
     for function in asg['::statiskit::stl'].functions():
         if function.localname in ['generator', 'insert']:
             parameter = function.parameters[0].qualified_type.desugared_type
@@ -55,3 +53,6 @@ def generator(asg, module, decorator):
                              decorator=decorator,
                              closure=False,
                              helder='std::shared_ptr')
+
+# asg.nodes('.*::std::__detail::_Hash_node_base::_Hash_node_base.*')
+# '::std::bad_exception::~bad_exception'
