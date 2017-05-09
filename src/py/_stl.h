@@ -14,6 +14,4 @@ namespace autowig
     };
 }
 
-/*namespace autowig
-{}*/
 #endif
