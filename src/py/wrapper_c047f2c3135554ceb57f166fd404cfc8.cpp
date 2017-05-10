@@ -100,7 +100,7 @@ void wrapper_c047f2c3135554ceb57f166fd404cfc8()
                 if(!py_elem_hdl.get())
                 { break; }
                 boost::python::object py_elem_obj(py_elem_hdl);
-                result.push_back((class ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > > )(boost::python::extract< class ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > >  >(py_elem_obj)));
+                result.push_back(boost::python::extract< class ::std::basic_string< char, struct ::std::char_traits< char >, class ::std::allocator< char > >  >(py_elem_obj));
             }
         }
     };
