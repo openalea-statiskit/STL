@@ -140,13 +140,12 @@ try:
     cppenv = env.Clone(tools = ['cpp'])
 
     cppenv.AppendUnique(CPPDEFINES = ['LIBSTATISKIT_STL'])
-
     exclude = """
     """.split()
 
-    sources = [source for source in cppenv.Glob('*.*') if not source.name in exclude]
-
-    targets = cppenv.CppLibrary("statiskit_stl", sources)
+    sources = [source for source in cppenv.Glob('*.h*') if not source.name in exclude]
+    targets = cppenv.CppDev("statiskit_stl", sources)
+    Alias("cpp-dev", targets)
     Alias("cpp", targets)
     Alias("autowig", targets)
     Alias("install", targets)
@@ -154,19 +153,30 @@ try:
         wigenv = cppenv.Clone(tools = ['wig'])
 
         targets = wigenv.BoostPythonWIG('statiskit_stl', [target for target in targets if target.name.endswith('.h')],
-                                        module='../py/_stl.cpp',
+                                        module='../py/wrapper/_stl.cpp',
                                         decorator='../py/statiskit/stl/_stl.py',
                                         parser_bootstrap=1,
                                         controller='AutoWIG.py',
-                                        generator='AutoWIG.py')
+                                        depends=[])
         Alias("autowig", targets)
-        wigenv.Depends(targets, "cpp")
+        wigenv.Depends(targets, "cpp-dev")
     except EnvironmentError:
         Alias("autowig", [])
         pass
     except Exception:
         raise
+
+    exclude = """
+    """.split()
+
+    sources = [source for source in cppenv.Glob('*.cpp') if not source.name in exclude]
+    targets = cppenv.CppLib("statiskit_stl", sources)
+    Alias("cpp-lib", targets)
+    Alias("cpp", targets)
+    Alias("install", targets)
 except EnvironmentError:
+    Alias("cpp-dev", [])
+    Alias("cpp-lib", [])
     Alias("cpp", [])
     Alias("autowig", [])
     Alias("install", [])

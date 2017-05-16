@@ -5,7 +5,7 @@
 namespace autowig
 {
 
-    void method_decorator_03b285991d1f51b1a7d55a3416478017(class ::statiskit::stl::Generator< class ::std::unordered_set< unsigned long int, struct ::std::hash< unsigned long int >, struct ::std::equal_to< unsigned long int >, class ::std::allocator< unsigned long int > > > & instance, class ::statiskit::stl::Generator< class ::std::unordered_set< unsigned long int, struct ::std::hash< unsigned long int >, struct ::std::equal_to< unsigned long int >, class ::std::allocator< unsigned long int > > > & param_out)     { instance.operator++() = param_out; }
+    void method_decorator_03b285991d1f51b1a7d55a3416478017(class ::statiskit::stl::Generator< class ::std::unordered_set< unsigned long int, struct ::std::hash< unsigned long int >, struct ::std::equal_to< unsigned long int >, class ::std::allocator< unsigned long int > > > & instance, const class ::statiskit::stl::Generator< class ::std::unordered_set< unsigned long int, struct ::std::hash< unsigned long int >, struct ::std::equal_to< unsigned long int >, class ::std::allocator< unsigned long int > > > & param_out) { instance.operator++() = param_out; }
 }
 
 #if defined(_MSC_VER)
