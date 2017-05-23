@@ -5,6 +5,8 @@
 namespace autowig
 {
 
+    void method_decorator_69807f66301958b58ec8e566dad5f44d(class ::std::fpos< __mbstate_t > & instance, ::std::streamoff  param_in_0, const class ::std::fpos< __mbstate_t > & param_out) { instance.operator+=(param_in_0) = param_out; }
+    void method_decorator_3471b660ad1c5296a25f584dba14f6bb(class ::std::fpos< __mbstate_t > & instance, ::std::streamoff  param_in_0, const class ::std::fpos< __mbstate_t > & param_out) { instance.operator-=(param_in_0) = param_out; }
 }
 
 #if defined(_MSC_VER)
@@ -32,7 +34,9 @@ void wrapper_c62bcafb31b250e8bb3f63626536f4b4()
     ::std::streamoff  (::std::fpos< __mbstate_t >::*method_pointer_42ef4f3e4a4e5160863a2b0ab2bd01ac)(class ::std::fpos< __mbstate_t > const &) const = &::std::fpos< __mbstate_t >::operator-;
     boost::python::class_< class ::std::fpos< __mbstate_t >, autowig::Held< class ::std::fpos< __mbstate_t > >::Type > class_c62bcafb31b250e8bb3f63626536f4b4("_Fpos_c62bcafb31b250e8bb3f63626536f4b4", "", boost::python::no_init);
     class_c62bcafb31b250e8bb3f63626536f4b4.def("__iadd__", method_pointer_69807f66301958b58ec8e566dad5f44d, boost::python::return_internal_reference<>(), "");
+    class_c62bcafb31b250e8bb3f63626536f4b4.def("__iadd__", autowig::method_decorator_69807f66301958b58ec8e566dad5f44d);
     class_c62bcafb31b250e8bb3f63626536f4b4.def("__isub__", method_pointer_3471b660ad1c5296a25f584dba14f6bb, boost::python::return_internal_reference<>(), "");
+    class_c62bcafb31b250e8bb3f63626536f4b4.def("__isub__", autowig::method_decorator_3471b660ad1c5296a25f584dba14f6bb);
     class_c62bcafb31b250e8bb3f63626536f4b4.def("__add__", method_pointer_b29ae265339b58199401cf5c0e640389, "");
     class_c62bcafb31b250e8bb3f63626536f4b4.def("__sub__", method_pointer_7e4f5995bdef5462836c01679a689968, "");
     class_c62bcafb31b250e8bb3f63626536f4b4.def("__sub__", method_pointer_42ef4f3e4a4e5160863a2b0ab2bd01ac, "");
