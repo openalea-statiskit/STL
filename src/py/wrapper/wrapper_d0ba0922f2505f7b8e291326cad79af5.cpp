@@ -33,7 +33,6 @@ void wrapper_d0ba0922f2505f7b8e291326cad79af5()
     if(autowig::Held< struct ::std::equal_to< unsigned long int > >::is_class)
     {
         boost::python::implicitly_convertible< autowig::Held< struct ::std::equal_to< unsigned long int > >::Type, autowig::Held< struct ::std::binary_function< unsigned long int, unsigned long int, bool > >::Type >();
-        //boost::python::objects::class_value_wrapper< autowig::Held< struct ::std::equal_to< unsigned long int > >::Type, boost::python::objects::make_ptr_instance< struct ::std::equal_to< unsigned long int >, boost::python::objects::pointer_holder< autowig::Held< struct ::std::equal_to< unsigned long int > >::Type, struct ::std::equal_to< unsigned long int > > > >();
     }
 
 }
