@@ -29,8 +29,8 @@ def controller(asg, **kwargs):
                     constructor.boost_python_export = False
     for cls in asg['class ::std::less'].specializations(partial = False):
         cls.boost_python_export = False
-    # for cls in asg['class ::std::fpos'].specializations(partial = False):
-    #     cls.boost_python_export = False
+    for cls in asg['class ::std::hash'].specializations(partial = False):
+        cls.boost_python_export = False
     for cls in asg['class ::std::allocator'].specializations(partial = False):
         cls.boost_python_export = False
     if 'class ::std::reverse_iterator' in asg:
