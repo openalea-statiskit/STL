@@ -1,7 +1,6 @@
 #include "_stl.h"
 
 void wrapper_10b14312eeb655268489cd34090870cf();
-void wrapper_277a0516fe4451448165550d8b9d6b2b();
 void wrapper_3b59a0980c80518c808634f7a84dc3cd();
 void wrapper_448c20257e485acda59dc59305fceb58();
 void wrapper_476c1c1f206251dba7af53c48f3f6e42();
@@ -26,7 +25,6 @@ boost::python::docstring_options docstring_options(1, 0, 0);
 BOOST_PYTHON_MODULE(__stl)
 {
     wrapper_10b14312eeb655268489cd34090870cf();
-    wrapper_277a0516fe4451448165550d8b9d6b2b();
     wrapper_3b59a0980c80518c808634f7a84dc3cd();
     wrapper_448c20257e485acda59dc59305fceb58();
     wrapper_476c1c1f206251dba7af53c48f3f6e42();

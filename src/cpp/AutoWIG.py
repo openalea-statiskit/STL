@@ -31,6 +31,9 @@ def controller(asg, **kwargs):
         cls.boost_python_export = False
     for cls in asg['class ::std::hash'].specializations(partial = False):
         cls.boost_python_export = False
+    for cls in asg['class ::std::char_traits'].specializations(partial = False):
+        for mtd in cls.methods(access='public'):
+            cls.boost_python_export = False
     for cls in asg['class ::std::allocator'].specializations(partial = False):
         cls.boost_python_export = False
     if 'class ::std::reverse_iterator' in asg:

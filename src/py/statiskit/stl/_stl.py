@@ -12,11 +12,9 @@ __stl.std._UnorderedSet = (__stl.std._UnorderedSet_d48105936d4f5d09a78d2aa9f878f
 __stl.statiskit.stl._Generator = (__stl.statiskit.stl._Generator_10b14312eeb655268489cd34090870cf, __stl.statiskit.stl._Generator_3b59a0980c80518c808634f7a84dc3cd, __stl.statiskit.stl._Generator_745e4933f5b250d9bc5232fe864d0cf7, __stl.statiskit.stl._Generator_74bc331707c1505eb2f807cae7c32bbb, __stl.statiskit.stl._Generator_e76a1308464d5a9a837d9a61f942fae7)
 __stl.std._BinaryFunction = (__stl.std._BinaryFunction_8f249c2863945cb59771b97c53bdafec)
 __stl.std._BasicString = (__stl.std._BasicString_448c20257e485acda59dc59305fceb58)
-__stl.std._CharTraits = (__stl.std._CharTraits_277a0516fe4451448165550d8b9d6b2b)
 __stl.std._Vector = (__stl.std._Vector_107131f9768c56e794a9b0de728d1738, __stl.std._Vector_6b9ae5eac40858c9a0f5e6e21c15d1d3, __stl.std._Vector_c047f2c3135554ceb57f166fd404cfc8, __stl.std._Vector_dc5522842bc75d8b9ac7b46020c60854)
 
 # Define aliases
-__stl.std._BasicString_448c20257e485acda59dc59305fceb58.TraitsType = __stl.std._CharTraits_277a0516fe4451448165550d8b9d6b2b
 __stl.std._Set_6436891c9b6854f494789a812891cbe5.KeyType = __stl.std._BasicString_448c20257e485acda59dc59305fceb58
 __stl.std._Set_6436891c9b6854f494789a812891cbe5.ValueType = __stl.std._BasicString_448c20257e485acda59dc59305fceb58
 __stl.std._UnorderedSet_d48105936d4f5d09a78d2aa9f878fdb8.KeyEqual = __stl.std._EqualTo_d0ba0922f2505f7b8e291326cad79af5
