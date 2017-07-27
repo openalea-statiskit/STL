@@ -1,7 +1,6 @@
 echo ON
 
-set SCONS_MSCOMMON_DEBUG=-
-scons cpp --prefix=%LIBRARY_PREFIX% -j%CPU_COUNT% --arch=%ARCH% --msvc-version=14.0
+scons cpp --prefix=%LIBRARY_PREFIX% -j%CPU_COUNT% --arch=%ARCH%
 if errorlevel 1 exit 1
 
 echo OFF
