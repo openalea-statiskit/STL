@@ -1,4 +1,4 @@
-**StatisKit-STL**: Minimal Interpreted Interfaces for containers of the **STL** *C++* Template Library
+**StatisKit-STL**: Minimal Interpreted Interfaces for Containers of the **STL** *C++* Template Library
 ######################################################################################################
 
 The **STL** is a C++ template library providing four components called algorithms, containers, functional, and iterators.
