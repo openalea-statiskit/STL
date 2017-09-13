@@ -11,9 +11,6 @@ services:
   
 env:
   - CONDA_RECIPE=libstatiskit_stl
-    CONDA_VERSION=2
-  - CONDA_RECIPE=libstatiskit_stl
-    CONDA_VERSION=3
   - CONDA_RECIPE=python-statiskit_stl
     CONDA_VERSION=2
   - CONDA_RECIPE=python-statiskit_stl
