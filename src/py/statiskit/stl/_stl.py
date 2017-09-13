@@ -2,7 +2,7 @@ __all__ = []
 
 
 # Import Boost.Python module
-import __stl
+import .__stl
 
 
 # Group template specializations
