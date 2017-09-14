@@ -1,21 +1,29 @@
 import _stl
 import __stl
 
+import six
 from functools import wraps
 
 __all__ = []
 
 def generator_decoration(cls):
 
-    def next(self):
-         if self.is_valid():
-             value = self.value()
-             self.__next__()
-             return value
-         else:
-             raise StopIteration()
+    def wrapper___next__(f):
+        @wraps(f)
+        def __next__(self):
+             if self.is_valid():
+                 value = self.value()
+                 f(self)
+                 return value
+             else:
+                 raise StopIteration()
+        return __next__
 
-    cls.next = next
+    cls.__next__ = wrapper___next__(cls.__next__)
+
+    if six.PY2:
+        cls.next = cls.__next__
+        del cls.__next__
 
     def __iter__(self):
         return self
