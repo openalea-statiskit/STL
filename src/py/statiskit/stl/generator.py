@@ -1,5 +1,5 @@
-import _stl
-import __stl
+from . import _stl
+from . import __stl
 
 from functools import wraps
 
