@@ -1,3 +1,3 @@
-from . import set
-from . import vector
-from . import generator
+from .set import *
+from .vector import *
+from .generator import *
