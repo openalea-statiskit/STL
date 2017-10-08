@@ -10,24 +10,24 @@ build:
 
 about:
   home: http://statiskit-stl.readthedocs.org
-  license: CeCILL
+  license: Apache License 2.0
 
 requirements:
   build:
-    - libdev
-    - python-dev
+    - libtoolchain
+    - python-toolchain
     - libboost
     - libstatiskit_stl
     - python
   run:
-    - librun
+    - libruntime
     - libstatiskit_stl
     - libboost
     - python
 
 test:                                               
   requires:
-    - python-dev
+    - python-toolchain
   imports:
     - statiskit.stl
   source_files:                                
