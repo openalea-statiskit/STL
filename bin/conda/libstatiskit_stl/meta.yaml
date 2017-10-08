@@ -10,7 +10,7 @@ build:
 
 about:
   home: http://statiskit-stl.readthedocs.org
-  license: CeCILL
+  license: Apache License 2.0
 
 requirements:
   build:
