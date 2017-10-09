@@ -80,6 +80,10 @@ namespace statiskit
 		typedef std::vector< double > VectorDouble;
 		typedef std::vector< std::string > VectorString;
 
+		typedef std::unordered_set< Index > SetIndex;
+		typedef Generator< SetIndex > SetIndexGenerator;
+		STATISKIT_STL_API SetIndexGenerator generator(const SetIndex& iterable);
+		STATISKIT_STL_API bool insert(SetIndex& iterable, const Index& value);
 		typedef std::set< Index, std::less< Index >, std::allocator< Index > > SetLessIndex;
 		typedef Generator< SetLessIndex > SetLessIndexGenerator;
 		STATISKIT_STL_API SetLessIndexGenerator generator(const SetLessIndex& iterable);
@@ -96,10 +100,6 @@ namespace statiskit
 		typedef Generator< SetLessString > SetLessStringGenerator;
 		STATISKIT_STL_API SetLessStringGenerator generator(const SetLessString& iterable);
 		STATISKIT_STL_API bool insert(SetLessString& iterable, const std::string& value);
-		typedef std::unordered_set< Index > SetIndex;
-		typedef Generator< SetIndex > SetIndexGenerator;
-		STATISKIT_STL_API SetIndexGenerator generator(const SetIndex& iterable);
-		STATISKIT_STL_API bool insert(SetIndex& iterable, const Index& value);
 
 	}
 }
