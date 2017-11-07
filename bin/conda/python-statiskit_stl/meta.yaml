@@ -11,6 +11,7 @@ build:
 about:
   home: http://statiskit-stl.readthedocs.org
   license: Apache License 2.0
+  summary: Minimal Interpreted Interfaces for Containers of the STL C++ Template Library
 
 requirements:
   build:
