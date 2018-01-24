@@ -10,6 +10,7 @@ def controller(asg, **kwargs):
             if parameter.is_class:
                 function.parent = parameter.unqualified_type
     for cls in asg['class ::std::vector'].specializations(partial = False):
+        cls.is_instantiable = True
         for method in cls.methods():
             if method.localname in ['resize', 'shrink_to_fit', 'operator[]']:
                 if isinstance(method.boost_python_export, bool):
@@ -19,6 +20,7 @@ def controller(asg, **kwargs):
                 if isinstance(constructor.boost_python_export, bool):
                     constructor.boost_python_export = False
     for cls in asg['class ::std::set'].specializations(partial = False):
+        cls.is_instantiable = True
         for method in cls.methods():
             if method.localname in ['swap', 'key_comp', 'value_comp', 'get_allocator']:
                 if isinstance(method.boost_python_export, bool):
@@ -48,6 +50,9 @@ def controller(asg, **kwargs):
     for mtd in asg['::statiskit::stl::String'].qualified_type.desugared_type.unqualified_type.methods():
         #if mtd.localname in ['substr', 'compare']:
          mtd.boost_python_export = False
+    if 'class ::std::basic_string_view' in asg:
+        for cls in asg['class ::std::basic_string_view'].specializations(partial = False):
+            cls.boost_python_export = False
     return asg
 
 def generator(asg, module, decorator):
