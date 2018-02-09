@@ -16,5 +16,3 @@ about:
 requirements:
   build:
     - libtoolchain
-  run:
-    - libruntime

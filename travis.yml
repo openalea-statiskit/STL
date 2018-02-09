@@ -9,9 +9,6 @@ os:
   - osx
 
 sudo: required
-
-services:
-  - docker
   
 env:
   - CONDA_RECIPE=libstatiskit_stl
@@ -21,7 +18,7 @@ env:
     CONDA_VERSION=3
     
 install:
-  - git clone https://github.com/StatisKit/travis-ci.git travis-ci
+  - git clone --depth=1 https://github.com/StatisKit/travis-ci.git travis-ci
   - cd travis-ci
   - source install.sh
 
