@@ -11,10 +11,10 @@ os:
 sudo: required
   
 env:
-  - CONDA_RECIPE=libstatiskit_stl
-  - CONDA_RECIPE=python-statiskit_stl
+  - CONDA_RECIPE=bin/conda/libstatiskit_stl
+  - CONDA_RECIPE=bin/conda/python-statiskit_stl
     CONDA_VERSION=2
-  - CONDA_RECIPE=python-statiskit_stl
+  - CONDA_RECIPE=bin/conda/python-statiskit_stl
     CONDA_VERSION=3
     
 install:
