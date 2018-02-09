@@ -2,6 +2,9 @@ branches:
   except:
     - fp17
   
+# image: Visual Studio 2015 Update 2
+image: Visual Studio 2013
+
 platform:
   - x64
 
