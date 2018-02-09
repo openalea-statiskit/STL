@@ -31,9 +31,8 @@ after_build:
   - call after_build.bat
 
 deploy:
+  skip_cleanup: true
   provider: Script
-  on:
-    branch: master
  
 before_deploy:
   - call before_deploy.bat
