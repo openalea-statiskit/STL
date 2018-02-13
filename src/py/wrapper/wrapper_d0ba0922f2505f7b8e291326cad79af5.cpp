@@ -28,6 +28,7 @@ void wrapper_d0ba0922f2505f7b8e291326cad79af5()
     bool  (::std::equal_to< unsigned long int >::*method_pointer_096db2c8a9775702bd7119d2d5b8e22d)(unsigned long int const &, unsigned long int const &) const = &::std::equal_to< unsigned long int >::operator();
     boost::python::class_< struct ::std::equal_to< unsigned long int >, autowig::Held< struct ::std::equal_to< unsigned long int > >::Type, boost::python::bases< struct ::std::binary_function< unsigned long int, unsigned long int, bool > > > class_d0ba0922f2505f7b8e291326cad79af5("_EqualTo_d0ba0922f2505f7b8e291326cad79af5", "", boost::python::no_init);
     class_d0ba0922f2505f7b8e291326cad79af5.def(boost::python::init<  >(""));
+    class_d0ba0922f2505f7b8e291326cad79af5.def(boost::python::init< struct ::std::equal_to< unsigned long int > const & >(""));
     class_d0ba0922f2505f7b8e291326cad79af5.def("__call__", method_pointer_096db2c8a9775702bd7119d2d5b8e22d, "");
 
     if(autowig::Held< struct ::std::equal_to< unsigned long int > >::is_class)
