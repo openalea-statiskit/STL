@@ -10,6 +10,7 @@ platform:
 
 environment:
   matrix:
+    - CONDA_RECIPE: bin\conda\libstatiskit_stl-dev
     - CONDA_RECIPE: bin\conda\libstatiskit_stl
     - CONDA_RECIPE: bin\conda\python-statiskit_stl
       CONDA_VERSION: 2

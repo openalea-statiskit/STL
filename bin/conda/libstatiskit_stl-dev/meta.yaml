@@ -1,5 +1,5 @@
 package:
-  name: libstatiskit_stl
+  name: libstatiskit_stl-dev
   version: "1.0.0"
 
 source:
@@ -16,4 +16,4 @@ about:
 requirements:
   build:
     - libtoolchain
-    - libstatiskit_stl-dev
+    - libtoolchain-dev
