@@ -17,3 +17,6 @@ requirements:
   build:
     - libtoolchain
     - libtoolchain-dev
+    - python
+  run:
+    - python
