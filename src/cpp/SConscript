@@ -148,20 +148,16 @@ Alias("cpp-dev", targets)
 Alias("cpp", targets)
 Alias("autowig", targets)
 Alias("install", targets)
-try:
-    wigenv = cppenv.Clone(tools = ['wig'])
 
-    targets = wigenv.BoostPythonWIG('statiskit_stl', [target for target in targets if target.name.endswith('.h')],
-                                    module='../py/wrapper/_stl.cpp',
-                                    decorator='../py/statiskit/stl/_stl.py',
-                                    parser_bootstrap=1,
-                                    controller='AutoWIG.py',
-                                    depends=[])
-    Alias("autowig", targets)
-    wigenv.Depends(targets, "cpp-dev")
-except Exception:
-    Alias("autowig", [])
-    pass
+wigenv = cppenv.Clone(tools = ['wig'])
+targets = wigenv.BoostPythonWIG('statiskit_stl', [target for target in targets if target.name.endswith('.h')],
+                                module='../py/wrapper/_stl.cpp',
+                                decorator='../py/statiskit/stl/_stl.py',
+                                parser_bootstrap=1,
+                                controller='AutoWIG.py',
+                                depends=[])
+Alias("autowig", targets)
+wigenv.Depends(targets, "cpp-dev")
 
 exclude = """
 """.split()
