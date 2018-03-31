@@ -33,7 +33,7 @@ def decorator(cls):
         @wraps(f)
         def __getitem__(self, index):
             if isinstance(index, slice):
-                return [self[index] for index in xrange(*index.indices(len(self)))]
+                return [self[index] for index in range(*index.indices(len(self)))]
             else:
                 if index < 0:
                     index += len(self)
@@ -44,7 +44,7 @@ def decorator(cls):
         @wraps(f)
         def __setitem__(self, index, value):
             if isinstance(index, slice):
-                for index, value in zip(xrange(*index.indices(len(self))), value):
+                for index, value in zip(range(*index.indices(len(self))), value):
                     self[index] = value
             else:
                 if index < 0:
