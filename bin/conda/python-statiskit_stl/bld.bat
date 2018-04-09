@@ -1,7 +1,7 @@
 echo ON
 
 if "%PY3K%" == "0" (
-  3to2 -n -w %SRC_DIR%\src\py\autowig
+  3to2 -n -w %SRC_DIR%\src\py\autowig -x next
   3to2 -n -w %SRC_DIR%\test
 )
 
