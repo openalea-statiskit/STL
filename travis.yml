@@ -12,8 +12,6 @@ sudo: required
   
 env:
   - CONDA_RECIPE=bin/conda/libstatiskit_stl-dev
-    CONDA_VERSION=2
-  - CONDA_RECIPE=bin/conda/libstatiskit_stl-dev
     CONDA_VERSION=3
   - CONDA_RECIPE=bin/conda/libstatiskit_stl
   - CONDA_RECIPE=bin/conda/python-statiskit_stl
