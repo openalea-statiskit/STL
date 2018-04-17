@@ -4,7 +4,7 @@ import itertools
 
 def controller(asg, library=True, **kwargs):
     autowig.controller.plugin = 'default'
-    asg = autowig.controller(asg, **kwargs)
+    asg = autowig.controller(asg, clean=False, **kwargs)
     if library:
         for function in asg['::statiskit::stl'].functions():
             if function.localname in ['generator', 'insert']:
