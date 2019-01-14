@@ -7,17 +7,14 @@ language: cpp
 os:
   - linux
   - osx
+  - windows
 
 sudo: required
   
 env:
-  - CONDA_RECIPE=bin/conda/libstatiskit_stl-dev
-    CONDA_VERSION=3
-  - CONDA_RECIPE=bin/conda/libstatiskit_stl
-  - CONDA_RECIPE=bin/conda/python-statiskit_stl
-    CONDA_VERSION=2
-  - CONDA_RECIPE=bin/conda/python-statiskit_stl
-    CONDA_VERSION=3
+  - CONDA_RECIPE=etc/conda/libstatiskit_stl-dev
+  - CONDA_RECIPE=etc/conda/libstatiskit_stl
+  - CONDA_RECIPE=etc/conda/python-statiskit_stl
     
 install:
   - git clone --depth=1 https://github.com/StatisKit/travis-ci.git travis-ci
