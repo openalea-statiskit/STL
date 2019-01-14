@@ -15,9 +15,13 @@ about:
 
 requirements:
   build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
     - libtoolchain
     - python-toolchain
-    - libboost_python-dev
+  host:
+    - libboost-dev
+    - libboost_python
     - libstatiskit_stl
     - python
   run:
