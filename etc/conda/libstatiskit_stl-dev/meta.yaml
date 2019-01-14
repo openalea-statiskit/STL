@@ -20,6 +20,6 @@ requirements:
     - {{ compiler('cxx') }}
     - libtoolchain
     - libtoolchain-dev
-    - autowig-toolchain
+    - autowig-toolchain             # [linux]
   host:
     - python
