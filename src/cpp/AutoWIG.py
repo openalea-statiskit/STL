@@ -3,8 +3,6 @@ from autowig.asg import TemplateSpecializationProxy
 import itertools
 
 def controller(asg, library=True, **kwargs):
-    import pdb
-    pdb.set_trace()
     autowig.controller.plugin = 'default'
     asg = autowig.controller(asg, clean=False, **kwargs)
     if library:
