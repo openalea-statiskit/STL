@@ -21,7 +21,7 @@ requirements:
     - libstatiskit_stl
     - python
   run:
-    - libboost_python
+    - {{ pin_compatible('libboost_python', min_pin='x', max_pin='x') }}
     - {{ pin_compatible('libstatiskit_stl', exact=True) }}
     - python
 

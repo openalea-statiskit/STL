@@ -1,12 +1,12 @@
 package:
   name: libstatiskit_stl-dev
-  version: "1.0.0"
+  version: {{ GIT_DESCRIBE_TAG }}
 
 source:
   path: ../../..
 
 build:
-  number: 0
+  number: {{ GIT_DESCRIBE_NUMBER }}
   detect_binary_files_with_prefix: False
   
 about:
@@ -16,6 +16,10 @@ about:
 
 requirements:
   build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
     - libtoolchain
     - libtoolchain-dev
+    - autowig-toolchain
+  host:
     - python

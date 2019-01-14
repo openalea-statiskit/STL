@@ -1,12 +1,12 @@
 package:
   name: libstatiskit_stl
-  version: "1.0.0"
+  version: {{ GIT_DESCRIBE_TAG }}
 
 source:
   path: ../../..
 
 build:
-  number: 0
+  number: {{ GIT_DESCRIBE_NUMBER }}
 
 about:
   home: http://statiskit-stl.readthedocs.org
@@ -15,5 +15,8 @@ about:
 
 requirements:
   build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
     - libtoolchain
+  host:
     - libstatiskit_stl-dev
