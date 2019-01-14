@@ -15,7 +15,7 @@ env:
   - CONDA_RECIPE=etc/conda/libstatiskit_stl-dev
   - CONDA_RECIPE=etc/conda/libstatiskit_stl
   - CONDA_RECIPE=etc/conda/python-statiskit_stl
-\      
+      
 before_install:
   - git clone https://github.com/StatisKit/travis-ci.git --depth=1
   - cd travis-ci
