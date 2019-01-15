@@ -1,16 +1,19 @@
-branches:
-  except:
-    - fp17
-    
 language: cpp
+
+sudo: required
+
+git:
+  depth: false
 
 os:
   - linux
   - osx
   - windows
 
-sudo: required
-  
+dist: trusty
+
+osx_image: xcode8.3
+
 env:
   - CONDA_RECIPE=etc/conda/libstatiskit_stl-dev
   - CONDA_RECIPE=etc/conda/libstatiskit_stl
