@@ -1,6 +1,6 @@
 package:
   name: libstatiskit_stl-dev
-  version: {{ GIT_DESCRIBE_TAG }}
+  version: {{ GIT_DESCRIBE_VERSION }}
 
 source:
   path: ../../..

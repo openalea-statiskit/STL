@@ -1,6 +1,6 @@
 package:
   name: python-statiskit_stl
-  version: {{ GIT_DESCRIBE_TAG }}
+  version: {{ GIT_DESCRIBE_VERSION }}
 
 source:
   path: ../../..
