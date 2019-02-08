@@ -1,17 +1,17 @@
-#ifndef AUTOWIG__STL
-#define AUTOWIG__STL
+#pragma once
 
-#include <boost/python.hpp>
-#include <type_traits>
-#include <statiskit/stl/STL.h>
+#include <pybind11/pybind11.h>
+
 #include <memory>
+#include <statiskit/stl/STL.h>
 
 namespace autowig
 {
-     template<class T> struct Held {
-        typedef std::shared_ptr< T > Type;
-        static bool const is_class = true;
+    template<class T> struct HolderType {
+        typedef std::unique_ptr< T > Type;
+    };
+
+    template<class T> struct NoDeleteHolderType {
+        typedef std::unique_ptr< T, pybind11::nodelete > Type;
     };
 }
-
-#endif

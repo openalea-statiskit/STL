@@ -149,8 +149,8 @@ Alias("cpp", targets)
 Alias("autowig", targets)
 Alias("install", targets)
 
-wigenv = cppenv.Clone(tools = ['boost_python_wig'])
-targets = wigenv.BoostPythonWIG('statiskit_stl', [target for target in targets if target.name.endswith('.h')],
+wigenv = cppenv.Clone(tools = ['pybind11_wig'])
+targets = wigenv.PyBind11WIG('statiskit_stl', [target for target in targets if target.name.endswith('.h')],
                                 module='../py/wrapper/_stl.cpp',
                                 decorator='../py/statiskit/stl/_stl.py',
                                 parser_bootstrap=1,
