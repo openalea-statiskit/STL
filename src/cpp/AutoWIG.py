@@ -36,6 +36,9 @@ def controller(asg, library=True, **kwargs):
     if 'class ::std::less' in asg:
         for cls in asg['class ::std::less'].specializations(partial=False):
             cls.pybind11_export = False
+    if 'class ::std::equal_to' in asg:
+        for cls in asg['class ::std::equal_to'].specializations(partial=False):
+            cls.pybind11_export = False
     if 'class ::std::hash' in asg:
         for cls in asg['class ::std::hash'].specializations(partial=False):
             cls.pybind11_export = False
