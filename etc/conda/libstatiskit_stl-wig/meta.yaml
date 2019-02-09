@@ -1,0 +1,26 @@
+package:
+  name: libstatiskit_stl-wig
+  version: {{ GIT_DESCRIBE_VERSION }}
+
+source:
+  path: ../../..
+
+build:
+  number: {{ GIT_DESCRIBE_NUMBER }}
+  detect_binary_files_with_prefix: False
+  
+about:
+  home: http://statiskit-stl.readthedocs.org
+  license: Apache License 2.0
+  summary: Minimal Interpreted Interfaces for Containers of the STL C++ Template Library
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - libtoolchain
+    - libtoolchain-dev
+    - autowig-toolchain
+  host:
+    - libstatiskit_stl-dev
+    - python

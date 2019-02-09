@@ -16,10 +16,16 @@ osx_image: xcode8.3
 
 env:
   - CONDA_RECIPE=etc/conda/libstatiskit_stl-dev
+  - CONDA_RECIPE=etc/conda/libstatiskit_stl-wig
   - CONDA_RECIPE=etc/conda/libstatiskit_stl
   - CONDA_RECIPE=etc/conda/python-statiskit_stl
       
 matrix:
+  exclude:
+    - os: osx
+      env: CONDA_RECIPE=etc/conda/libstatiskit_stl-wig
+    - os: windows
+      env: CONDA_RECIPE=etc/conda/libstatiskit_stl-wig
   allow_failures:
     - os: windows
       env: CONDA_RECIPE=etc/conda/python-statiskit_stl
