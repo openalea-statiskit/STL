@@ -20,12 +20,10 @@ requirements:
     - libtoolchain
     - python-toolchain
   host:
-    - libboost-dev
-    - libboost_python
+    - libpybind11-dev
     - libstatiskit_stl
     - python
   run:
-    - {{ pin_compatible('libboost_python', min_pin='x.x', max_pin='x.x') }}
     - {{ pin_compatible('libstatiskit_stl', exact=True) }}
     - python
 
