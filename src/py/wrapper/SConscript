@@ -4,7 +4,7 @@ from SCons.Errors import EnvironmentError
 
 try:
     Import("env")
-    pyenv = env.Clone(tools = ['boost_python'])
+    pyenv = env.Clone(tools = ['pybind11'])
 
     pyenv.AppendUnique(LIBS  = ['statiskit_stl'])
 
@@ -13,7 +13,7 @@ try:
 
     sources = [source for source in pyenv.Glob('*.*') if source.name not in exclude]
 
-    targets = pyenv.BoostPythonExtension("../statiskit/stl/__stl", sources)
+    targets = pyenv.PyBind11Extension("../statiskit/stl/__stl", sources)
     Alias("py", targets)
     Alias("install", targets)
     pyenv.Depends(targets, "cpp")
