@@ -1,8 +1,6 @@
-import autowig
-from autowig.asg import TemplateSpecializationProxy
-import itertools
-
 def controller(asg, library=True, **kwargs):
+    import autowig
+    from autowig.asg import TemplateSpecializationProxy
     autowig.controller.plugin = 'default'
     asg = autowig.controller(asg, clean=False, **kwargs)
     if library:
@@ -75,6 +73,8 @@ def controller(asg, library=True, **kwargs):
 
 
 def generator(asg, module, decorator):
+    import autowig
+    import itertools
     autowig.generator.plugin = 'pybind11'
     nodes = [typedef.qualified_type.unqualified_type for typedef in asg['::statiskit::stl'].typedefs()] + asg['class ::std::basic_string'].specializations(partial=False)
     nodes = list(itertools.chain(*[node.bases(inherited=True) for node in nodes])) + nodes + asg['::statiskit::stl'].declarations()
