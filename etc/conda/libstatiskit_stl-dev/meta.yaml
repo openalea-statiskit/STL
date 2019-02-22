@@ -7,7 +7,6 @@ source:
 
 build:
   number: {{ GIT_DESCRIBE_NUMBER }}
-  detect_binary_files_with_prefix: False
   
 about:
   home: http://statiskit-stl.readthedocs.org
@@ -20,5 +19,3 @@ requirements:
     - {{ compiler('cxx') }}
     - libtoolchain
     - libtoolchain-dev
-  host:
-    - python

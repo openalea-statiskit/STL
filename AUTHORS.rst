@@ -1,1 +1,0 @@
-* `Pierre Fernique <pierre.fernique@inria.fr>`_

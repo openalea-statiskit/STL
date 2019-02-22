@@ -1,5 +1,5 @@
 package:
-  name: libstatiskit_stl-wig
+  name: autowig-libstatiskit_stl
   version: {{ GIT_DESCRIBE_VERSION }}
 
 source:
@@ -23,4 +23,7 @@ requirements:
     - autowig-toolchain
   host:
     - libstatiskit_stl-dev
+    - python
+  run:
+    - {{ pin_compatible('libstatiskit_stl-dev', exact=True) }}
     - python
