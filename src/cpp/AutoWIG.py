@@ -66,9 +66,12 @@ def controller(asg, library=True, **kwargs):
                 cls.pybind11_export = False
             for cls in asg.classes(templated=False, specialized=True):
                 for template in cls.templates:
-                    template = template.desugared_type.unqualified_type
-                    if isinstance(template, TemplateSpecializationProxy) and template.specialize.globalname == supercls:
-                        cls.pybind11_export = False 
+                    try:
+                        template = template.desugared_type.unqualified_type
+                        if isinstance(template, TemplateSpecializationProxy) and template.specialize.globalname == supercls:
+                            cls.pybind11_export = False 
+                    except:
+                        pass
     return asg
 
 
