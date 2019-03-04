@@ -14,64 +14,67 @@ for var in dir(__stl.statiskit.stl):
 
 def decorator(cls):
 
-    def wrapper__init__(f):
-        @wraps(f)
-        def __init__(self, arg=None):
-            if arg is None:
-                f(self)
-            else:
-                try:
-                    f(self, arg)
-                except:
-                    raise TypeError('\'arg\' parameter must be a \'' + self.__class__.__name__ + '\' instance or compatible Python object')
-        return __init__
+    if not hasattr(cls, "__decorated__") or not cls.__decorated__:
+        
+        cls.__decorated__ = True
 
-    cls.__init__ = wrapper__init__(cls.__init__)
+        def wrapper__init__(f):
+            @wraps(f)
+            def __init__(self, *args):
+                if len(args) == 1 and isinstance(args[0], self.__class__):
+                    f(self, args[0])
+                else:
+                    f(self)
+                    for arg in args:
+                        self.push_back(arg)
+            return __init__
 
-    def wrapper_at(f):
+        cls.__init__ = wrapper__init__(cls.__init__)
 
-        @wraps(f)
-        def __getitem__(self, index):
-            if isinstance(index, slice):
-                return [self[index] for index in range(*index.indices(len(self)))]
-            else:
-                if index < 0:
-                    index += len(self)
-                if not 0 <= index < len(self):
-                    raise IndexError("vector index out of range")
-                return f(self, index)
+        def wrapper_at(f):
 
-        @wraps(f)
-        def __setitem__(self, index, value):
-            if isinstance(index, slice):
-                for index, value in zip(range(*index.indices(len(self))), value):
-                    self[index] = value
-            else:
-                if index < 0:
-                    index += len(self)
-                if not 0 <= index < len(self):
-                    raise IndexError("vector index out of range")
-                return f(self, index, value)
+            @wraps(f)
+            def __getitem__(self, index):
+                if isinstance(index, slice):
+                    return [self[index] for index in range(*index.indices(len(self)))]
+                else:
+                    if index < 0:
+                        index += len(self)
+                    if not 0 <= index < len(self):
+                        raise IndexError("vector index out of range")
+                    return f(self, index)
 
-        return __getitem__, __setitem__
+            @wraps(f)
+            def __setitem__(self, index, value):
+                if isinstance(index, slice):
+                    for index, value in zip(range(*index.indices(len(self))), value):
+                        self[index] = value
+                else:
+                    if index < 0:
+                        index += len(self)
+                    if not 0 <= index < len(self):
+                        raise IndexError("vector index out of range")
+                    return f(self, index, value)
 
-    cls.__getitem__, cls.__setitem__ = wrapper_at(cls.at)
-    del cls.at
+            return __getitem__, __setitem__
 
-    def __str__(self):
-        return "(" + ", ".join(str(value) for value in self) + ")"
+        cls.__getitem__, cls.__setitem__ = wrapper_at(cls.at)
+        del cls.at
 
-    cls.__str__ = __str__
+        def __str__(self):
+            return "(" + ", ".join(str(value) for value in self) + ")"
 
-    def __repr__(self):
-        return "(" + ", ".join(repr(value) for value in self) + ")"
+        cls.__str__ = __str__
 
-    cls.__repr__ = __repr__
+        def __repr__(self):
+            return "(" + ", ".join(repr(value) for value in self) + ")"
 
-    def _repr_latex_(self):
-        return "$\\left(" + ", ".join(getattr(value, "_repr_latex_", getattr(value, "__repr__"))() for value in self) + "\\right)$"
+        cls.__repr__ = __repr__
 
-    cls._repr_latex_ = _repr_latex_
+        def _repr_latex_(self):
+            return "$\\left(" + ", ".join(getattr(value, "_repr_latex_", getattr(value, "__repr__"))() for value in self) + "\\right)$"
+
+        cls._repr_latex_ = _repr_latex_
 
 for cls in __stl.std._Vector:
     decorator(cls)

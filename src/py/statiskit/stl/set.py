@@ -12,35 +12,39 @@ for var in dir(__stl.statiskit.stl):
         setattr(__module__, var, getattr(__stl.statiskit.stl, var))
         __all__.append(var)
 
-def decoration(cls):
+def decorator(cls):
 
-    def wrapper__init__(f):
-        @wraps(f)
-        def __init__(self, arg=None):
-            if arg is None:
-                f(self)
-            elif not isinstance(arg, self.__class__):
-                raise TypeError('\'arg\' parameter must be a \'' + self.__class__ + '\' instance')
-            else:
-                f(self, arg)
-        return __init__
+    if not hasattr(cls, "__decorated__") or not cls.__decorated__:
+        
+        cls.__decorated__ = True
 
-    cls.__init__ = wrapper__init__(cls.__init__)
+        def wrapper__init__(f):
+            @wraps(f)
+            def __init__(self, *args):
+                if len(args) == 1 and isinstance(args[0], self.__class__):
+                    f(self, args[0])
+                else:
+                    f(self)
+                    for arg in args:
+                        self.insert(arg)
+            return __init__
 
-    def __str__(self):
-        return "{" + ", ".join(str(value) for value in self) + "}"
+        cls.__init__ = wrapper__init__(cls.__init__)
 
-    cls.__str__ = __str__
+        def __str__(self):
+            return "{" + ", ".join(str(value) for value in self) + "}"
 
-    def __repr__(self):
-        return "{" + ", ".join(repr(value) for value in self) + "}"
+        cls.__str__ = __str__
 
-    cls.__repr__ = __repr__
+        def __repr__(self):
+            return "{" + ", ".join(repr(value) for value in self) + "}"
 
-    def _repr_latex_(self):
-        return "$\\left\\{" + ", ".join(getattr(value, "_repr_latex_", getattr(value, "__repr__"))() for value in self) + "\\right\\}$"
+        cls.__repr__ = __repr__
 
-    cls._repr_latex_ = _repr_latex_
+        def _repr_latex_(self):
+            return "$\\left\\{" + ", ".join(getattr(value, "_repr_latex_", getattr(value, "__repr__"))() for value in self) + "\\right\\}$"
+
+        cls._repr_latex_ = _repr_latex_
 
 for cls in __stl.std._Set:
-    decoration(cls)
+    decorator(cls)
