@@ -30,7 +30,7 @@
 
 namespace statiskit
 {
-    typedef std::size_t Index;
+    typedef unsigned long int Index;
     typedef std::set< Index > Indices;
 
     namespace stl
