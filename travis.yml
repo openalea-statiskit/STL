@@ -28,7 +28,7 @@ matrix:
       env: CONDA_RECIPE=etc/conda/autowig-libstatiskit_stl
 
 before_install:
-  - git clone https://github.com/StatisKit/travis-ci.git --depth=1
+  - git clone https://github.com/openalea-statiskit/travis-ci.git --depth=1
   - cd travis-ci
   - ./before_install
 
